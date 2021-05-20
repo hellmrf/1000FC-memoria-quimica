@@ -6,7 +6,6 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "commit": "cz",
     "preinstall": "git config core.hooksPath .githooks"
   },
   "dependencies": {
