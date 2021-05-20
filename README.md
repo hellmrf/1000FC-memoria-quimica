@@ -1,5 +1,7 @@
 # Memória Química - 1000 Futuros Cientistas
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ## Sobre a Stack
 
 A Stack [React Native](https://reactnative.dev/) + [TypeScript](https://www.typescriptlang.org/) será usada para o desenvolvimento da aplicação. Entretanto, a fim de simplificar o processo de teste pelo restante da equipe, o _workflow_ [Expo](https://expo.io/) foi escolhido. Ele permite a execução do aplicativo em modo de desenvolvimento diretamente em um Smartphone através da instalação de um aplicativo _container_, com o código de desenvolvimento sendo trafegado localmente ou mesmo através da internet (por túneis semelhantes ao [ngrok](https://ngrok.com/)).
@@ -51,4 +53,4 @@ Se um emulador ou dispositivo real estiver acessível pelo `adb`, o Expo Go ser�
 
 O Prettier está sendo usado como _formater_. Ele pode ser executado no projeto com `yarn prettier --write .`, mas extensões estão disponíveis para [diversos editores de código](https://prettier.io/docs/en/editors.html).
 
-O `commitizen` está sendo usado para garantir a coesão entre os commits.
+O [`commitizen`](http://commitizen.github.io/cz-cli/) está sendo usado para garantir a coesão entre os commits. Ao executar um `git commit`, um prompt será exibido.
