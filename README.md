@@ -51,6 +51,6 @@ Se um emulador ou dispositivo real estiver acessível pelo `adb`, o Expo Go ser�
 
 ### Coding-Style
 
-O Prettier está sendo usado como _formater_. Ele pode ser executado no projeto com `yarn prettier --write .`, mas extensões estão disponíveis para [diversos editores de código](https://prettier.io/docs/en/editors.html).
+O Prettier está sendo usado como _formatter_. Ele pode ser executado no projeto com `yarn prettier --write .`, mas extensões estão disponíveis para [diversos editores de código](https://prettier.io/docs/en/editors.html).
 
 O [`commitizen`](http://commitizen.github.io/cz-cli/) está sendo usado para garantir a coesão entre os commits. Ao executar um `git commit`, um prompt será exibido.
