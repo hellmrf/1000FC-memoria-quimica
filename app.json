@@ -2,31 +2,29 @@
   "expo": {
     "name": "1000FC-memoria-quimica",
     "slug": "1000FC-memoria-quimica",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    // "icon": "./assets/icon.png",
+    // "splash": {
+    //   "image": "./assets/splash.png",
+    //   "resizeMode": "contain",
+    //   "backgroundColor": "#ffffff"
+    // },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+      // "adaptiveIcon": {
+      //   "foregroundImage": "./assets/adaptive-icon.png",
+      //   "backgroundColor": "#FFFFFF"
+      // }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      // "favicon": "./assets/favicon.png"
     }
   }
 }
