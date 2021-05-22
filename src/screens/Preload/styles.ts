@@ -18,7 +18,6 @@ export const AtomAnimationBorder = styled.View`
   width: 300px;
   height: 300px;
   background-color: #ffffff77;
-  border: 20px solid #ffffff77;
   border-radius: 150px;
   justify-content: center;
   align-items: center;
