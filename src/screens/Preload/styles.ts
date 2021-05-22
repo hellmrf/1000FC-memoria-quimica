@@ -20,11 +20,13 @@ export const AtomAnimationBorder = styled.View`
   background-color: #ffffff77;
   border: 20px solid #ffffff77;
   border-radius: 150px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const AtomAnimation = styled.Image`
-  width: 100%;
-  height: 100%;
+  width: 87%;
+  height: 87%;
 `;
 
 export const LogotipoArea = styled.View`
