@@ -26,3 +26,7 @@ export const AtomAnimation = styled.Image`
   width: 100%;
   height: 100%;
 `;
+
+export const LogotipoArea = styled.View`
+  margin-top: 100px;
+`;
