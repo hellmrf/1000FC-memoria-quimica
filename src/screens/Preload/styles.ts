@@ -14,7 +14,14 @@ export const Background = styled(LinearGradient)`
   align-items: center;
 `;
 
+export const AtomAnimationBorder = styled.View`
+  width: 300px;
+  height: 300px;
+  border: 20px solid #ffffff77;
+  border-radius: 150px;
+`;
+
 export const AtomAnimation = styled.Image`
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
 `;
