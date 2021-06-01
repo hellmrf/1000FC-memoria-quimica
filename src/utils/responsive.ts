@@ -21,14 +21,11 @@ function getDeviceDPIQualifier(): string {
   else if (dpi > XXHDPI_MIN_LIMIT) return XXHDPI_QUALIFIER;
 }
 
-function percentageScreenSize(wp: number, hp: number) {
-  let out = { wp: null, hp: null };
-
-  if (wp > 0 && wp <= 1) out.wp = wp * width;
-
-  if (hp > 0 && hp <= 1) out.hp = hp * height;
-
-  return out;
+function getScreenSizePX() {
+  return {
+    width: PixelRatio.getPixelSizeForLayoutSize(width),
+    height: PixelRatio.getPixelSizeForLayoutSize(height),
+  };
 }
 
 export {
@@ -40,5 +37,5 @@ export {
   MDPI_QUALIFIER,
   XHDPI_QUALIFIER,
   XXHDPI_QUALIFIER,
-  percentageScreenSize,
+  getScreenSizePX,
 };
