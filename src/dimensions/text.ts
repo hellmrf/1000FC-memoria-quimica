@@ -6,9 +6,9 @@ import {
 } from '../utils/responsive';
 
 const APP_PRIMARY_TITLE = {
-  [MDPI_QUALIFIER]: 25,
-  [XHDPI_QUALIFIER]: 45,
-  [XXHDPI_QUALIFIER]: 65,
+  [MDPI_QUALIFIER]: 28,
+  [XHDPI_QUALIFIER]: 55,
+  [XXHDPI_QUALIFIER]: 75,
 };
 
 const NORMAL_TEXT = {
