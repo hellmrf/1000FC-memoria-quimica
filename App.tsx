@@ -1,21 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import MainStack from './src/stacks/MainStack';
+import { useFonts } from 'expo-font';
+import Preload from './src/screens/Preload';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    LoveloBlack: require('./src/assets/fonts/Lovelo_Black.otf'),
+    LoveloLineBold: require('./src/assets/fonts/Lovelo_Line_Bold.otf'),
+  });
+
+  if (!fontsLoaded) return <Preload />;
+
   return (
-    <View style={styles.container}>
-      <Text>Empty project.</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <MainStack />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
