@@ -1,25 +1,18 @@
-import {
-  getDeviceDPIQualifier,
-  MDPI_QUALIFIER,
-  XHDPI_QUALIFIER,
-  XXHDPI_QUALIFIER,
-} from '../utils/responsive';
+import { getDeviceDPIQualifier } from '../utils/responsive';
 
 const APP_PRIMARY_TITLE = {
-  [MDPI_QUALIFIER]: 28,
-  [XHDPI_QUALIFIER]: 55,
-  [XXHDPI_QUALIFIER]: 75,
+  mdpi: 28,
+  xhdpi: 55,
+  xxhdpi: 75,
 };
 
 const NORMAL_TEXT = {
-  [MDPI_QUALIFIER]: 15,
-  [XHDPI_QUALIFIER]: 35,
-  [XXHDPI_QUALIFIER]: 55,
+  mdpi: 15,
+  xhdpi: 35,
+  xxhdpi: 55,
 };
 
-const DEVICE_QUALIFIER = getDeviceDPIQualifier();
+const deviceQualifier = getDeviceDPIQualifier();
 
-var app_primary_title_size = APP_PRIMARY_TITLE[DEVICE_QUALIFIER];
-var normal_text_size = NORMAL_TEXT[DEVICE_QUALIFIER];
-
-export { app_primary_title_size, normal_text_size };
+export const appPrimaryTitleSize = APP_PRIMARY_TITLE[deviceQualifier];
+export const normalTextSize = NORMAL_TEXT[deviceQualifier];

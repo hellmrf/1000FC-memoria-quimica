@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, useWindowDimensions } from 'react-native';
+import { View, Dimensions } from 'react-native';
 
 import PlayButton from '../../assets/play_button.svg';
-import { app_primary_title_size } from '../../dimensions/text';
+import { appPrimaryTitleSize } from '../../dimensions/text';
 
 import {
   AtomAnimation,
@@ -20,8 +20,8 @@ const SCREEN_ATOM_PERC = 0.55;
 const SCREEN_PLAY_PERC = 0.3;
 
 export default () => {
-  let screen_width = useWindowDimensions().width;
-  let screen_height = useWindowDimensions().height;
+  const screen_width = Dimensions.get('screen').width;
+  const screen_height = Dimensions.get('screen').height;
 
   const atomAnimationPercSize = 0.8;
   const atomBorderPercSize = 0.9;
@@ -41,13 +41,13 @@ export default () => {
         <View flex={SCREEN_TITLE_PERC} zIndex={1} justifyContent="center">
           <TitleOfTheGame
             marginBottom={-1.25 * (SCREEN_TITLE_PERC * screen_height)}>
-            <TitleOfTheGameText fontSize={app_primary_title_size}>
+            <TitleOfTheGameText fontSize={appPrimaryTitleSize}>
               Jogo
             </TitleOfTheGameText>
-            <TitleOfTheGameText fontSize={app_primary_title_size}>
+            <TitleOfTheGameText fontSize={appPrimaryTitleSize}>
               da
             </TitleOfTheGameText>
-            <TitleOfTheGameText bold fontSize={app_primary_title_size}>
+            <TitleOfTheGameText bold fontSize={appPrimaryTitleSize}>
               Memória
             </TitleOfTheGameText>
           </TitleOfTheGame>

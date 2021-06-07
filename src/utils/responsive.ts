@@ -2,40 +2,40 @@ import { Dimensions, PixelRatio } from 'react-native';
 
 const MDPI_MAX_LIMIT = 1.5;
 const XHDPI_MAX_LIMIT = 3;
-const XXHDPI_MIN_LIMIT = 3;
+// const XXHDPI_MIN_LIMIT = 3;
 
-const MDPI_QUALIFIER = 'mdpi';
-const XHDPI_QUALIFIER = 'xhdpi';
-const XXHDPI_QUALIFIER = 'xxhdpi';
+export enum DeviceQualifier {
+  MDPI = 'mdpi',
+  XHDPI = 'xhdpi',
+  XXHDPI = 'xxhdpi',
+}
+// const ratioLimit = {
+//   mdpi: 1.5,
+//   xhdpi: 3,
+//   xxhdpi: 3,
+// }
 
 const { width, height } = Dimensions.get('window');
 
-function getDeviceDPI(): number {
+export function getDeviceDPI(): number {
   return PixelRatio.get();
 }
 
-function getDeviceDPIQualifier(): string {
-  let dpi = PixelRatio.get();
-  if (dpi <= MDPI_MAX_LIMIT) return MDPI_QUALIFIER;
-  else if (dpi <= XHDPI_MAX_LIMIT) return XHDPI_QUALIFIER;
-  else if (dpi > XXHDPI_MIN_LIMIT) return XXHDPI_QUALIFIER;
+export function getDeviceDPIQualifier(): DeviceQualifier {
+  const dpi = PixelRatio.get();
+  if (dpi <= MDPI_MAX_LIMIT) return DeviceQualifier.MDPI;
+  else if (dpi <= XHDPI_MAX_LIMIT) return DeviceQualifier.XHDPI;
+  else return DeviceQualifier.XXHDPI;
 }
 
-function getScreenSizePX() {
+export interface ScreenSize {
+  width: number;
+  height: number;
+}
+
+export function getScreenSizePX(): ScreenSize {
   return {
     width: PixelRatio.getPixelSizeForLayoutSize(width),
     height: PixelRatio.getPixelSizeForLayoutSize(height),
   };
 }
-
-export {
-  getDeviceDPI,
-  getDeviceDPIQualifier,
-  MDPI_MAX_LIMIT,
-  XHDPI_MAX_LIMIT,
-  XXHDPI_MIN_LIMIT,
-  MDPI_QUALIFIER,
-  XHDPI_QUALIFIER,
-  XXHDPI_QUALIFIER,
-  getScreenSizePX,
-};
