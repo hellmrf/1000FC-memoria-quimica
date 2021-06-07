@@ -25,7 +25,6 @@ export const AtomAnimationBorder = styled.View<{ diameter: number }>`
 export const AtomAnimation = styled.Image<{ diameter?: number }>`
   width: ${props => props.diameter + 'px' || '87%'};
   height: ${props => props.diameter + 'px' || '87%'};
-  resize-mode: contain;
 `;
 
 export const PlayButtonArea = styled.TouchableOpacity<{ diameter: number }>`
