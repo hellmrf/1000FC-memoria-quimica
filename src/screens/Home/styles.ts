@@ -8,18 +8,18 @@ const SCREEN_WIDTH = Dimensions.get('screen').width;
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 /// Must be sum up 1.
-const SCREEN_TITLE_PERCENTAGE = 0.15;
-const SCREEN_ATOM_PERCENTAGE = 0.55;
+const SCREEN_TITLE_PERCENTAGE = 0.2;
+const SCREEN_ATOM_PERCENTAGE = 0.5;
 const SCREEN_PLAY_PERCENTAGE = 0.3;
 
-const atomBorderPercSize = 0.9;
+const atomBorderPercSize = 0.7;
 const atomMaxSize = Math.min(
   SCREEN_ATOM_PERCENTAGE * SCREEN_HEIGHT,
   SCREEN_WIDTH
 );
 const atomDiameter = atomBorderPercSize * atomMaxSize;
 
-const playButtonPercSize = 0.75;
+const playButtonPercSize = 0.5;
 
 export const playButtonSize =
   playButtonPercSize * SCREEN_PLAY_PERCENTAGE * SCREEN_HEIGHT;
