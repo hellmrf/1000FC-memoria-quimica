@@ -2,7 +2,27 @@ import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 
-const windowWidth = Dimensions.get('window').width;
+import { appPrimaryTitleSize } from '../../dimensions/text';
+
+const SCREEN_WIDTH = Dimensions.get('screen').width;
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
+
+/// Must be sum up 1.
+const SCREEN_TITLE_PERCENTAGE = 0.15;
+const SCREEN_ATOM_PERCENTAGE = 0.55;
+const SCREEN_PLAY_PERCENTAGE = 0.3;
+
+const atomBorderPercSize = 0.9;
+const atomMaxSize = Math.min(
+  SCREEN_ATOM_PERCENTAGE * SCREEN_HEIGHT,
+  SCREEN_WIDTH
+);
+const atomDiameter = atomBorderPercSize * atomMaxSize;
+
+const playButtonPercSize = 0.75;
+
+export const playButtonSize =
+  playButtonPercSize * SCREEN_PLAY_PERCENTAGE * SCREEN_HEIGHT;
 
 export const Container = styled.View`
   flex: 1;
@@ -13,37 +33,56 @@ export const Background = styled(LinearGradient)`
   flex: 1;
 `;
 
-export const AtomAnimationBorder = styled.View<{ diameter: number }>`
-  width: ${props => props.diameter}px;
-  height: ${props => props.diameter}px;
-  background-color: #ffffff77;
-  border-radius: ${props => props.diameter / 2}px;
+export const AnimationContainer = styled.View`
+  flex: ${SCREEN_ATOM_PERCENTAGE};
+  z-index: 1;
   justify-content: center;
   align-items: center;
 `;
 
-export const AtomAnimation = styled.Image<{ diameter?: number }>`
-  width: ${props => props.diameter + 'px' || '87%'};
-  height: ${props => props.diameter + 'px' || '87%'};
+export const AtomAnimationBorder = styled.View`
+  width: ${atomDiameter}px;
+  height: ${atomDiameter}px;
+  background-color: #ffffff77;
+  border-radius: ${atomDiameter / 2}px;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const PlayButtonArea = styled.TouchableOpacity<{ diameter: number }>`
+export const AtomAnimation = styled.Image`
+  width: ${atomDiameter * 0.9}px;
+  height: ${atomDiameter * 0.9}px;
+`;
+
+export const PlayButtonContainer = styled.View`
+  flex: ${SCREEN_PLAY_PERCENTAGE};
+  z-index: 2;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+export const PlayButtonArea = styled.TouchableOpacity`
   background-color: #ffffff33;
-  border-radius: ${props => props.diameter / 2 + 'px'};
+  border-radius: ${playButtonSize / 2}px;
 `;
 
-export const TitleOfTheGame = styled.View<{ marginBottom?: number }>`
+export const TitleOfTheGameContainer = styled.View`
+  flex: ${SCREEN_TITLE_PERCENTAGE};
+  z-index: 9;
+  justify-content: center;
+`;
+
+export const TitleOfTheGame = styled.View`
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: ${props => props.marginBottom || 0}px;
+  margin-bottom: ${-1.25 * SCREEN_TITLE_PERCENTAGE * SCREEN_HEIGHT}px;
 `;
 
 export const TitleOfTheGameText = styled.Text<{
   bold?: boolean;
-  fontSize: number;
 }>`
   font-family: ${props => (props.bold ? 'LoveloBlack' : 'LoveloLineBold')};
-  font-size: ${props => props.fontSize}px;
+  font-size: ${appPrimaryTitleSize}px;
   color: white;
   text-transform: uppercase;
   text-align: center;
