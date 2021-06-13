@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 
 import PlayButton from '../../assets/play_button.svg';
@@ -8,20 +7,13 @@ import {
   AtomAnimationBorder,
   Background,
   Container,
-  PlayButtonArea,
   TitleOfTheGame,
   TitleOfTheGameText,
   TitleOfTheGameContainer,
   AnimationContainer,
-  PlayButtonContainer,
-  playButtonSize,
 } from './styles';
 
 export default () => {
-  const navigation = useNavigation();
-
-  const playButtonAction = () => navigation.navigate('Game');
-
   return (
     <Container>
       <Background
@@ -30,9 +22,8 @@ export default () => {
         colors={['#13f3cbff', '#13f3cb60', '#13f3cb00']}>
         <TitleOfTheGameContainer>
           <TitleOfTheGame>
-            <TitleOfTheGameText>Jogo</TitleOfTheGameText>
-            <TitleOfTheGameText>da</TitleOfTheGameText>
-            <TitleOfTheGameText bold>Memória</TitleOfTheGameText>
+            <TitleOfTheGameText>GAME</TitleOfTheGameText>
+            <TitleOfTheGameText bold>SCREEN</TitleOfTheGameText>
           </TitleOfTheGame>
         </TitleOfTheGameContainer>
         <AnimationContainer>
@@ -42,15 +33,6 @@ export default () => {
             />
           </AtomAnimationBorder>
         </AnimationContainer>
-        <PlayButtonContainer>
-          <PlayButtonArea onPress={playButtonAction}>
-            <PlayButton
-              height={playButtonSize}
-              width={playButtonSize}
-              fill="white"
-            />
-          </PlayButtonArea>
-        </PlayButtonContainer>
       </Background>
     </Container>
   );
