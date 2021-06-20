@@ -1,39 +1,24 @@
 import React from 'react';
+import { View } from 'react-native';
+import styled from 'styled-components/native';
+import GameCard from '../../components/GameCard';
 
-import PlayButton from '../../assets/play_button.svg';
+import { Container, GameBoard } from './styles';
 
-import {
-  AtomAnimation,
-  AtomAnimationBorder,
-  Background,
-  Container,
-  TitleOfTheGame,
-  TitleOfTheGameText,
-  TitleOfTheGameContainer,
-  AnimationContainer,
-} from './styles';
+/// Repeats `Element` for `length` times, adding a `key` prop.
+function repeat_element(
+  length: number,
+  Element: React.FC
+): Array<React.ReactNode> {
+  return [...Array(length).keys()].map(x => <Element key={x} />);
+}
 
 export default () => {
+  const cards = repeat_element(4 * 4, GameCard);
+
   return (
     <Container>
-      <Background
-        start={{ x: 1, y: 1 }}
-        end={{ x: 0.0, y: 0 }}
-        colors={['#13f3cbff', '#13f3cb60', '#13f3cb00']}>
-        <TitleOfTheGameContainer>
-          <TitleOfTheGame>
-            <TitleOfTheGameText>GAME</TitleOfTheGameText>
-            <TitleOfTheGameText bold>SCREEN</TitleOfTheGameText>
-          </TitleOfTheGame>
-        </TitleOfTheGameContainer>
-        <AnimationContainer>
-          <AtomAnimationBorder>
-            <AtomAnimation
-              source={require('../../assets/atom_animation.gif')}
-            />
-          </AtomAnimationBorder>
-        </AnimationContainer>
-      </Background>
+      <GameBoard>{cards}</GameBoard>
     </Container>
   );
 };
