@@ -2,7 +2,29 @@ import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 
-const windowWidth = Dimensions.get('window').width;
+import { appPrimaryTitleSize } from '../../dimensions/text';
+
+const SCREEN_WIDTH = Dimensions.get('screen').width;
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
+
+/// Must be sum up 1.
+const relativeHeights = {
+  title: 0.2,
+  atom: 0.5,
+  play: 0.3,
+} as const;
+
+const atomBorderPercSize = 0.7;
+const atomMaxSize = Math.min(
+  relativeHeights.atom * SCREEN_HEIGHT,
+  SCREEN_WIDTH
+);
+const atomDiameter = atomBorderPercSize * atomMaxSize;
+
+const playButtonPercSize = 0.5;
+
+export const playButtonSize =
+  playButtonPercSize * relativeHeights.play * SCREEN_HEIGHT;
 
 export const Container = styled.View`
   flex: 1;
@@ -11,42 +33,58 @@ export const Container = styled.View`
 
 export const Background = styled(LinearGradient)`
   flex: 1;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-evenly;
+`;
+
+export const AnimationContainer = styled.View`
+  flex: ${relativeHeights.atom};
+  z-index: 1;
+  justify-content: center;
   align-items: center;
 `;
 
 export const AtomAnimationBorder = styled.View`
-  width: 75%;
-  height: ${windowWidth * 0.75}px;
+  width: ${atomDiameter}px;
+  height: ${atomDiameter}px;
   background-color: #ffffff77;
-  border-radius: 150px;
+  border-radius: ${atomDiameter / 2}px;
   justify-content: center;
   align-items: center;
 `;
 
 export const AtomAnimation = styled.Image`
-  width: 87%;
-  height: 87%;
+  width: ${atomDiameter * 0.9}px;
+  height: ${atomDiameter * 0.9}px;
+`;
+
+export const PlayButtonContainer = styled.View`
+  flex: ${relativeHeights.play};
+  z-index: 2;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 export const PlayButtonArea = styled.TouchableOpacity`
   background-color: #ffffff33;
-  border-radius: 60px;
+  border-radius: ${playButtonSize / 2}px;
+`;
+
+export const TitleOfTheGameContainer = styled.View`
+  flex: ${relativeHeights.title};
+  z-index: 9;
+  justify-content: center;
 `;
 
 export const TitleOfTheGame = styled.View`
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  margin-bottom: -140px;
-  z-index: 5;
+  margin-bottom: ${-1.25 * relativeHeights.title * SCREEN_HEIGHT}px;
 `;
 
-export const TitleOfTheGameText = styled.Text<{ bold?: boolean }>`
+export const TitleOfTheGameText = styled.Text<{
+  bold?: boolean;
+}>`
   font-family: ${props => (props.bold ? 'LoveloBlack' : 'LoveloLineBold')};
-  font-size: 54px;
+  font-size: ${appPrimaryTitleSize}px;
   color: white;
   text-transform: uppercase;
   text-align: center;
