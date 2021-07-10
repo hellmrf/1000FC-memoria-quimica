@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
+import theme from "../themes"
 
 import Logotipo from '../assets/logotipo.svg';
 
@@ -12,7 +13,7 @@ const Card = styled.TouchableOpacity`
   width: ${CARD_SIZE}px;
   height: ${CARD_SIZE}px;
   border-radius: 10px;
-  background-color: #e6e6e6;
+  background-color: ${theme.colors.lightGray};
   justify-content: center;
   align-items: center;
   margin: 5px;

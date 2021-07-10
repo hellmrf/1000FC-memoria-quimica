@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import theme from "../../themes"
 // import { Dimensions } from 'react-native';
 
 // const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -6,7 +7,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #a4d418ff;
+  background-color: ${theme.colors.mainBackground};
   justify-content: center;
   align-items: center;
 `;
