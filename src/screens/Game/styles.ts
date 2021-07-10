@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
+// import { Dimensions } from 'react-native';
 
-const SCREEN_WIDTH = Dimensions.get('screen').width;
-const SCREEN_HEIGHT = Dimensions.get('screen').height;
+// const SCREEN_WIDTH = Dimensions.get('screen').width;
+// const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 export const Container = styled.View`
   flex: 1;
