@@ -1,0 +1,2 @@
+- `checkmark.svg`: [Free for commercial use](https://www.iconfinder.com/icons/1398913/circle_correct_mark_success_tick_yes_check_icon)
+- `wrongmark.svg`: [Free for commercial use](https://www.iconfinder.com/icons/1398920/red_circle_close_cross_cancel_remove_delete_incorrect_icon)

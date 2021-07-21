@@ -1,7 +1,8 @@
 import React from 'react';
-import GameCard from '../../components/GameCard';
 
-import { Container, GameBoard } from './styles';
+import HitsCounter from './HitsCounter';
+import GameCard from '../../components/GameCard';
+import { Container, GameBoard, GameFooter } from './styles';
 
 /// Repeats `Element` for `length` times, adding a `key` prop.
 function repeat_element(
@@ -17,6 +18,10 @@ export default () => {
   return (
     <Container>
       <GameBoard>{cards}</GameBoard>
+      <GameFooter>
+        <HitsCounter hit counter={0} />
+        <HitsCounter hit={false} counter={0} />
+      </GameFooter>
     </Container>
   );
 };
