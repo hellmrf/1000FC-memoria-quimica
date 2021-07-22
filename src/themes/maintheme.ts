@@ -1,10 +1,15 @@
 export default {
-    theme: "MainTheme",
-    colors: {
-        mainBackground: "#a4d418ff",
-        purple: "#5e17eb",
-        lightPurple: "#8c52ff",
-        lightGray: "#e6e6e6"
-
-    }
+  theme: 'MainTheme',
+  fonts: {
+    normal: 'LoveloBlack',
+    bold: 'LoveloLineBold',
+  },
+  colors: {
+    mainBackground: '#a4d418ff',
+    purple: '#5e17eb',
+    lightPurple: '#8c52ff',
+    lightGray: '#e6e6e6',
+    red: '#eb0404',
+    lightYellow: '#ffde59',
+  },
 };
