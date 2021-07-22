@@ -1,10 +1,6 @@
 import styled from 'styled-components/native';
 import theme from '../../themes';
 import { STATUSBAR_HEIGHT } from '../../utils/deviceConstants';
-// import { Dimensions } from 'react-native';
-
-// const SCREEN_WIDTH = Dimensions.get('screen').width;
-// const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 export const Container = styled.SafeAreaView`
   flex: 1;
