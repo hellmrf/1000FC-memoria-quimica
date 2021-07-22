@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import CheckMarkIcon from '../../assets/icons/vendor/checkmark.svg';
-import CrossMarkIcon from '../../assets/icons/vendor/crossmark.svg';
+import CheckMarkIcon from '../assets/icons/vendor/checkmark.svg';
+import CrossMarkIcon from '../assets/icons/vendor/crossmark.svg';
 
 const HitsCounterView = styled.View`
   flex: 1;
