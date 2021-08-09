@@ -13,8 +13,11 @@ import {
   GameHeaderLeft,
   GameHeaderRight,
   PointsText,
+  LightBulbCircle,
 } from './styles';
 import AvatarSelector from './AvatarSelector';
+
+import LightBulbIcon from '../../assets/icons/light_bulb.svg';
 
 /// Repeats `Element` for `length` times, adding a `key` prop.
 function repeat_element(
@@ -41,7 +44,9 @@ export default () => {
           <PointsText>1000 pontos</PointsText>
         </GameHeaderLeft>
         <GameHeaderRight>
-          <Text style={{ color: 'white' }}>LÂMPADA</Text>
+          <LightBulbCircle>
+            <LightBulbIcon fill="white" width={40} height={40} />
+          </LightBulbCircle>
         </GameHeaderRight>
       </GameHeader>
       {/* TODO: esse estilo aí é só temporário, não assustar com a bagunça */}

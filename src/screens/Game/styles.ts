@@ -1,6 +1,9 @@
 import styled from 'styled-components/native';
 import theme from '../../themes';
 import { STATUSBAR_HEIGHT } from '../../utils/deviceConstants';
+import { getScreenSizePX } from '../../utils/responsive';
+
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = getScreenSizePX();
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -50,6 +53,15 @@ export const GameHeaderLeft = styled.View`
 export const GameHeaderRight = styled.View`
   width: 20%;
   height: 50px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LightBulbCircle = styled.TouchableOpacity`
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
   justify-content: center;
   align-items: center;
 `;
