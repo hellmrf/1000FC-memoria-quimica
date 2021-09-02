@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
 import styled from 'styled-components/native';
-import theme from "../themes"
+import theme from '../themes';
 
 import Logotipo from '../assets/logotipo.svg';
 
@@ -19,9 +19,9 @@ const Card = styled.TouchableOpacity`
   margin: 5px;
 `;
 
-export default () => {
+export default (props: any) => {
   return (
-    <Card activeOpacity={0.5}>
+    <Card activeOpacity={0.5} {...props}>
       <Logotipo width={CARD_SIZE * 0.75} fill="black" />
     </Card>
   );
