@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import theme from '../../themes';
 
-import Avatar from '../../assets/icons/vendor/einstein.svg';
+import DefaultAvatar from '../../assets/icons/vendor/einstein.svg';
 
 /// Tamanho do círculo
 const INDICATOR_SIZE = 50;
@@ -19,8 +19,7 @@ const ActiveIndicator = styled.View<{ active: boolean }>`
   width: ${INDICATOR_SIZE / 6}px;
   height: ${INDICATOR_SIZE / 6}px;
   border-radius: ${INDICATOR_SIZE / 12}px;
-  background-color: ${({ active }) =>
-    active ? theme.colors.red : 'transparent'};
+  background-color: ${({ active }) => (active ? theme.colors.red : 'transparent')};
   margin-bottom: 10px;
 `;
 
@@ -28,13 +27,17 @@ const AvatarArea = styled.View<{ active: boolean }>`
   width: ${INDICATOR_SIZE}px;
   height: ${INDICATOR_SIZE}px;
   border-radius: ${INDICATOR_SIZE / 2}px;
-  background-color: ${props =>
-    props.active ? 'rgba(255, 255, 255, 0.5)' : 'transparent'};
+  background-color: ${props => (props.active ? 'rgba(255, 255, 255, 0.5)' : 'transparent')};
   align-items: center;
   justify-content: flex-end;
 `;
 
-export default ({ active = false }: { active?: boolean }) => {
+interface AvatarSelectorProps {
+  Avatar?: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+  active?: boolean;
+}
+
+export default ({ Avatar = DefaultAvatar, active = false }: AvatarSelectorProps) => {
   return (
     <Container>
       <ActiveIndicator active={active} />
