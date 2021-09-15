@@ -13,8 +13,13 @@ export const Container = styled.SafeAreaView`
   padding-top: ${STATUSBAR_HEIGHT}px;
 `;
 
-export const GameBoard = styled.View`
+export const GameArea = styled.View`
   flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const GameBoard = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
@@ -43,29 +48,6 @@ export const GameHeader = styled.View`
   align-items: center;
   flex-direction: row;
 `;
-
-export const GameHeaderLeft = styled.View`
-  justify-content: center;
-  align-items: flex-start;
-  width: 70%;
-`;
-
-export const GameHeaderRight = styled.View`
-  width: 20%;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const LightBulbCircle = styled.TouchableOpacity`
-  width: 60px;
-  height: 60px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const Avatars = styled.View`
   justify-content: center;
   align-items: center;

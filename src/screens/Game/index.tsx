@@ -1,24 +1,11 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
 import theme from '../../themes';
 import { range } from '../../utils/misc';
 
 import HitsCounter from '../../components/HitsCounter';
 import GameCard from '../../components/GameCard';
-import {
-  Avatars,
-  Container,
-  GameBoard,
-  GameFooter,
-  GameHeader,
-  GameHeaderLeft,
-  GameHeaderRight,
-  PointsText,
-  LightBulbCircle,
-} from './styles';
+import { Avatars, Container, GameBoard, GameArea, GameFooter, GameHeader } from './styles';
 import AvatarSelector from './AvatarSelector';
-
-import LightBulbIcon from '../../assets/icons/light_bulb.svg';
 
 export default () => {
   const numberOfPlayers = 4; // TODO: get from props
@@ -35,21 +22,15 @@ export default () => {
   return (
     <Container>
       <GameHeader>
-        <GameHeaderLeft>
-          <Avatars>{avatars}</Avatars>
-          <PointsText>{points} pontos</PointsText>
-        </GameHeaderLeft>
-        <GameHeaderRight>
-          <LightBulbCircle>
-            <LightBulbIcon fill="white" width={40} height={40} />
-          </LightBulbCircle>
-        </GameHeaderRight>
+        <Avatars>{avatars}</Avatars>
       </GameHeader>
-      <GameBoard>
-        {range(numberOfCards).map(x => (
-          <GameCard key={x} onPress={nextPlayer} />
-        ))}
-      </GameBoard>
+      <GameArea>
+        <GameBoard>
+          {range(numberOfCards).map(x => (
+            <GameCard key={x} onPress={nextPlayer} />
+          ))}
+        </GameBoard>
+      </GameArea>
       <GameFooter>
         <HitsCounter hit counter={0} />
         <HitsCounter hit={false} counter={0} />
