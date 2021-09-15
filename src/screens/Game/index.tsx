@@ -30,7 +30,7 @@ function repeat_element(
 }
 
 export default () => {
-  const numberOfPlayers = 5; // TODO: get from props
+  const numberOfPlayers = 4; // TODO: get from props
   const numberOfCards = 4 * 4;
 
   const [activePlayer, setActivePlayer] = React.useState(0);
