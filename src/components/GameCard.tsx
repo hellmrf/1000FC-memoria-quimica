@@ -22,7 +22,7 @@ const Card = styled.TouchableOpacity`
 export default (props: any) => {
   return (
     <Card activeOpacity={0.5} {...props}>
-      <Logotipo width={CARD_SIZE * 0.75} fill="black" />
+      {props.fake === true || <Logotipo width={CARD_SIZE * 0.75} fill="black" />}
     </Card>
   );
 };
