@@ -16,7 +16,12 @@ const HitsCounterText = styled.Text`
   font-size: 20px;
 `;
 
-const HitsCounter = ({ hit, counter }: { hit: boolean; counter: number }) => {
+interface HitsCounterProps {
+  hit: boolean;
+  counter: number;
+}
+
+const HitsCounter = ({ hit, counter }: HitsCounterProps) => {
   const Icon = hit ? CheckMarkIcon : CrossMarkIcon;
 
   return (
