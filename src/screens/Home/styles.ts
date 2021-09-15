@@ -16,16 +16,12 @@ const relativeHeights = {
 } as const;
 
 const atomBorderPercSize = 0.7;
-const atomMaxSize = Math.min(
-  relativeHeights.atom * SCREEN_HEIGHT,
-  SCREEN_WIDTH
-);
+const atomMaxSize = Math.min(relativeHeights.atom * SCREEN_HEIGHT, SCREEN_WIDTH);
 const atomDiameter = atomBorderPercSize * atomMaxSize;
 
 const playButtonPercSize = 0.5;
 
-export const playButtonSize =
-  playButtonPercSize * relativeHeights.play * SCREEN_HEIGHT;
+export const playButtonSize = playButtonPercSize * relativeHeights.play * SCREEN_HEIGHT;
 
 export const Container = styled.View`
   flex: 1;
