@@ -20,15 +20,6 @@ import AvatarSelector from './AvatarSelector';
 
 import LightBulbIcon from '../../assets/icons/light_bulb.svg';
 
-/// Repeats `Element` for `length` times, adding a `key` prop.
-function repeat_element(
-  length: number,
-  Element: React.FC<any>,
-  properties: any = {}
-): Array<React.ReactNode> {
-  return range(length).map(x => <Element key={x} {...properties} />);
-}
-
 export default () => {
   const numberOfPlayers = 4; // TODO: get from props
   const numberOfCards = 4 * 4;
@@ -64,9 +55,9 @@ export default () => {
         SUA VEZ!
       </Text>
       <GameBoard>
-        {repeat_element(numberOfCards, GameCard, {
-          onPress: nextPlayer,
-        })}
+        {range(numberOfCards).map(x => (
+          <GameCard key={x} onPress={nextPlayer} />
+        ))}
       </GameBoard>
       <GameFooter>
         <HitsCounter hit counter={0} />
