@@ -5,9 +5,10 @@ import { getScreenSizePX } from '../../utils/responsive';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = getScreenSizePX();
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.SafeAreaView<{ player?: number }>`
   flex: 1;
-  background-color: ${theme.colors.mainBackground};
+  background-color: ${props =>
+    props.player !== undefined ? theme.colors.avatars[props.player] : theme.colors.mainBackground};
   justify-content: center;
   align-items: center;
   padding-top: ${STATUSBAR_HEIGHT}px;

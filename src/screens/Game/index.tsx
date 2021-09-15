@@ -20,7 +20,7 @@ export default () => {
   ));
 
   return (
-    <Container>
+    <Container player={activePlayer}>
       <GameHeader>
         <Avatars>{avatars}</Avatars>
       </GameHeader>
