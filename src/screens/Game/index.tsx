@@ -45,15 +45,6 @@ export default () => {
           </LightBulbCircle>
         </GameHeaderRight>
       </GameHeader>
-      {/* TODO: esse estilo aí é só temporário, não assustar com a bagunça */}
-      <Text
-        style={{
-          color: theme.colors.lightYellow,
-          fontSize: 32,
-          fontFamily: theme.fonts.normal,
-        }}>
-        SUA VEZ!
-      </Text>
       <GameBoard>
         {range(numberOfCards).map(x => (
           <GameCard key={x} onPress={nextPlayer} />
