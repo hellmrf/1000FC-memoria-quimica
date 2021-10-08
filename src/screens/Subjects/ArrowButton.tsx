@@ -1,52 +1,74 @@
-import React, { useRef} from 'react';
-import { Pressable, Animated, Easing, View } from 'react-native';
+import React, { useRef } from 'react';
+import { Pressable, Animated, Easing, StyleSheet } from 'react-native';
 
-export default (props: object) => {
+import ArrowSwitchLeftSVG from '../../assets/arrow_subject_left.svg';
+import ArrowSwitchRightSVG from '../../assets/arrow_subject_right.svg';
+import ArrowSwitchLeftPressedSVG from '../../assets/arrow_subject_left_pressed.svg';
+import ArrowSwitchRightPressedSVG from '../../assets/arrow_subject_right_pressed.svg';
 
-    const opacityFade = useRef(new Animated.Value(1)).current;
+export default props => {
+  const opacityFade = useRef(new Animated.Value(1)).current;
 
-    const animateClick = () => {
-        opacityFade.setValue(0);
-        Animated.timing(opacityFade, {
-            toValue: 0,
-            duration: 100,
-            easing: Easing.linear,
-            useNativeDriver: false
-        }).start(() => {opacityFade.setValue(1)});
-    };
+  const animateClick = () => {
+    opacityFade.setValue(0);
+    Animated.timing(opacityFade, {
+      toValue: 0,
+      duration: 100,
+      easing: Easing.linear,
+      useNativeDriver: false,
+    }).start(() => {
+      opacityFade.setValue(1);
+    });
+  };
 
-    return (
-        <View style={{height: '100%', width: '100%', zIndex: 0.5}}>
-            <Animated.View 
-                style={{
-                    zIndex: 1,
-                    flexDirection: 'column',
-                    alignItems: 'stretch',
-                    justifyContent: 'center',
-                    opacity: opacityFade
-                }}>
-                <props.SVGNormal 
-                    width='100%' 
-                    position='absolute'
-                    left={0}
-                    top={0}
-                    /> 
-            </Animated.View>
-            <Animated.View 
-                style={{
-                    flexDirection: 'column',
-                    alignItems: 'stretch',
-                    justifyContent: 'center',
-                    opacity: opacityFade.interpolate({inputRange:[0, 1], outputRange: [1, 0]})
-                }}>
-                <props.SVGPressed
-                    width='100%' 
-                    position='absolute'
-                    left={0}
-                    top={0}
-                    /> 
-            </Animated.View>
-        <Pressable onPress={() => {animateClick(); props.action();}} style={{width:'100%', height:'100%'}} />
-        </View>
-    );
-}
+  let ArrowNormal = ArrowSwitchLeftSVG;
+  let ArrowPressed = ArrowSwitchLeftPressedSVG;
+
+  // Check if it is the right button.
+  if (props.hasOwnProperty('right')) {
+    ArrowNormal = ArrowSwitchRightSVG;
+    ArrowPressed = ArrowSwitchRightPressedSVG;
+  }
+
+  const actions = () => {
+    animateClick();
+    props.action();
+  };
+
+  return (
+    <Pressable style={style.base} onPress={actions}>
+      <Animated.View style={style.normal} opacity={opacityFade}>
+        <ArrowNormal width="100%" height="100%" />
+      </Animated.View>
+      <Animated.View
+        style={style.pressed}
+        opacity={opacityFade.interpolate({
+          inputRange: [0, 1],
+          outputRange: [1, 0],
+        })}>
+        <ArrowPressed width="100%" height="100%" />
+      </Animated.View>
+    </Pressable>
+  );
+};
+
+const style = StyleSheet.create({
+  base: {
+    width: '100%',
+    height: '100%',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 0.5,
+  },
+  normal: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+  },
+  pressed: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+  },
+});

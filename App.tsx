@@ -7,8 +7,10 @@ import Preload from './src/screens/Preload';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    LoveloBlack: require('./src/assets/fonts/Lovelo_Black.otf'),
-    LoveloLineBold: require('./src/assets/fonts/Lovelo_Line_Bold.otf'),
+    AileronHeavy: require('./src/assets/fonts/aileron/Aileron-Heavy.otf'),
+    AileronSemiBold: require('./src/assets/fonts/aileron/Aileron-SemiBold.otf'),
+    LoveloBlack: require('./src/assets/fonts/lovelo/Lovelo_Black.otf'),
+    LoveloLineBold: require('./src/assets/fonts/lovelo/Lovelo_Line_Bold.otf'),
   });
 
   if (!fontsLoaded) return <Preload />;
