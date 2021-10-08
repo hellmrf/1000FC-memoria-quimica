@@ -29,7 +29,7 @@ const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 export default () => {
   const navigation = useNavigation();
-  const startButtonAction = () => navigation.navigate('ChCharacter');
+  const startButtonAction = () => navigation.navigate('ChoosePlayers');
 
   const centerScreen =
     (SCREEN_WIDTH * containerPlaySubjectButtonSize) / 2 - circleDiameter / 2; // Get the button's center on the screen.
