@@ -29,7 +29,7 @@ export const playButtonSize =
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #8c52ffff;
+  background-color: ${({ theme }) => theme.components.homeBackgroundColor};
 `;
 
 export const Background = styled(LinearGradient)`
@@ -46,7 +46,7 @@ export const AnimationContainer = styled.View`
 export const AtomAnimationBorder = styled.View`
   width: ${atomDiameter}px;
   height: ${atomDiameter}px;
-  background-color: #ffffff77;
+  background-color: ${({ theme }) => theme.components.homeAtomBorderColor};
   border-radius: ${atomDiameter / 2}px;
   justify-content: center;
   align-items: center;
@@ -65,7 +65,7 @@ export const PlayButtonContainer = styled.View`
 `;
 
 export const PlayButtonArea = styled.TouchableOpacity`
-  background-color: #ffffff33;
+  background-color: ${({ theme }) => theme.components.homePlayButtonAreaColor};
   border-radius: ${playButtonSize / 2}px;
 `;
 
@@ -82,10 +82,8 @@ export const TitleOfTheGame = styled.View`
   margin-bottom: ${-1.25 * relativeHeights.title * SCREEN_HEIGHT}px;
 `;
 
-export const TitleOfTheGameText = styled.Text<{
-  bold?: boolean;
-}>`
-  font-family: ${props => (props.bold ? 'LoveloBlack' : 'LoveloLineBold')};
+export const TitleOfTheGameText = styled.Text<{ bold?: boolean }>`
+  font-family: ${props => (props.bold ? props.theme.fonts.normal : props.theme.fonts.bold)};
   font-size: ${appPrimaryTitleSize}px;
   color: white;
   text-transform: uppercase;
@@ -101,7 +99,7 @@ export const ConfigButtonContainer = styled.View`
 `;
 
 export const ConfigButtonArea = styled.TouchableOpacity<{diameter: number}>`
-  background-color: #ffffff65;
+  background-color: ${({ theme }) => theme.components.homeConfigButtonAreaColor};
   border-radius: ${props => (props.diameter / 2)}px;
   width: ${props => (props.diameter / 2)}px;
   height: ${props => (props.diameter / 2)}px;

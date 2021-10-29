@@ -1,24 +1,40 @@
-import React from 'react';
-import { View } from 'react-native';
-import styled from 'styled-components/native';
+import React, { useState } from 'react';
+import theme from '../../themes';
+import { range } from '../../utils/misc';
+
+import HitsCounter from '../../components/HitsCounter';
 import GameCard from '../../components/GameCard';
-
-import { Container, GameBoard } from './styles';
-
-/// Repeats `Element` for `length` times, adding a `key` prop.
-function repeat_element(
-  length: number,
-  Element: React.FC
-): Array<React.ReactNode> {
-  return [...Array(length).keys()].map(x => <Element key={x} />);
-}
+import { Avatars, Container, GameBoard, GameArea, GameFooter, GameHeader } from './styles';
+import AvatarSelector from './AvatarSelector';
 
 export default () => {
-  const cards = repeat_element(4 * 4, GameCard);
+  const numberOfPlayers = 4; // TODO: get from props
+  const numberOfCards = 4 * 4;
+
+  const [activePlayer, setActivePlayer] = React.useState(0);
+  const [points, setPoints] = React.useState(1000);
+  const nextPlayer = () => setActivePlayer((activePlayer + 1) % numberOfPlayers);
+
+  const avatars = range(numberOfPlayers).map(x => (
+    <AvatarSelector key={x} active={activePlayer === x} />
+  ));
 
   return (
-    <Container>
-      <GameBoard>{cards}</GameBoard>
+    <Container player={activePlayer}>
+      <GameHeader>
+        <Avatars>{avatars}</Avatars>
+      </GameHeader>
+      <GameArea>
+        <GameBoard>
+          {range(numberOfCards).map(x => (
+            <GameCard key={x} onPress={nextPlayer} />
+          ))}
+        </GameBoard>
+      </GameArea>
+      <GameFooter>
+        <HitsCounter hit counter={0} />
+        <HitsCounter hit={false} counter={0} />
+      </GameFooter>
     </Container>
   );
 };

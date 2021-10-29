@@ -33,9 +33,7 @@ export default ({route, navigation}) => {
     const rouletteDegree = useRef(new Animated.Value(0)).current;
     const [finished, setFinished] = useState(false);
 
-    let startGame = () => {
-        console.log('O jogo começará...')
-    };
+    let startGame = () => navigation.navigate('Game');
 
     return (
         <Container>

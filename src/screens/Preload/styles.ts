@@ -1,9 +1,10 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import styled from 'styled-components/native';
+import theme from '../../themes';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #8c52ffff;
+  background-color: ${theme.colors.lightPurple};
 `;
 
 export const Background = styled(LinearGradient)`

@@ -1,8 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useContext } from 'react';
 
 import PlayButton from '../../assets/play_button.svg';
 import ConfigButton from '../../assets/config_button.svg';
+
+import AppContext from '../../components/AppContext';
 
 import {
   AtomAnimation,
@@ -26,16 +28,20 @@ export default () => {
   const playButtonAction = () => navigation.navigate('Subjects');
   const configButtonAction = () => navigation.navigate('Config');
 
+  const userPrefs = useContext(AppContext);
+  const theme = userPrefs.theme;
+
   return (
-    <Container>
+    <Container theme={theme}>
       <Background
         start={{ x: 1, y: 1 }}
         end={{ x: 0.0, y: 0 }}
-        colors={['#13f3cbff', '#13f3cb60', '#13f3cb00']}>
+        colors={theme.components.homeGradientBackgroundColor}>
           <ConfigButtonContainer>
             <ConfigButtonArea
               onPress={configButtonAction}
-              diameter={0.7 * playButtonSize}>
+              diameter={0.7 * playButtonSize}
+              theme={theme}>
               <ConfigButton
                 height={0.3 * playButtonSize}
                 width={0.3 * playButtonSize}
@@ -44,20 +50,20 @@ export default () => {
           </ConfigButtonContainer>
         <TitleOfTheGameContainer>
           <TitleOfTheGame>
-            <TitleOfTheGameText>Jogo</TitleOfTheGameText>
-            <TitleOfTheGameText>da</TitleOfTheGameText>
-            <TitleOfTheGameText bold>Memória</TitleOfTheGameText>
+            <TitleOfTheGameText theme={theme}>Jogo</TitleOfTheGameText>
+            <TitleOfTheGameText theme={theme}>da</TitleOfTheGameText>
+            <TitleOfTheGameText bold theme={theme}>Memória</TitleOfTheGameText>
           </TitleOfTheGame>
         </TitleOfTheGameContainer>
         <AnimationContainer>
-          <AtomAnimationBorder>
+          <AtomAnimationBorder theme={theme}>
             <AtomAnimation
               source={require('../../assets/atom_animation.gif')}
             />
           </AtomAnimationBorder>
         </AnimationContainer>
         <PlayButtonContainer>
-          <PlayButtonArea onPress={playButtonAction}>
+          <PlayButtonArea onPress={playButtonAction} theme={theme}>
             <PlayButton
               height={playButtonSize}
               width={playButtonSize}
