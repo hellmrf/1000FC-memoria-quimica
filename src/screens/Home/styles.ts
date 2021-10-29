@@ -3,7 +3,6 @@ import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 
 import { appPrimaryTitleSize } from '../../dimensions/text';
-import theme from '../../themes';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
@@ -25,7 +24,7 @@ export const playButtonSize = playButtonPercSize * relativeHeights.play * SCREEN
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${theme.colors.lightPurple};
+  background-color: ${({ theme }) => theme.components.homeBackgroundColor};
 `;
 
 export const Background = styled(LinearGradient)`
@@ -42,7 +41,7 @@ export const AnimationContainer = styled.View`
 export const AtomAnimationBorder = styled.View`
   width: ${atomDiameter}px;
   height: ${atomDiameter}px;
-  background-color: #ffffff77;
+  background-color: ${({ theme }) => theme.components.homeAtomBorderColor};
   border-radius: ${atomDiameter / 2}px;
   justify-content: center;
   align-items: center;
@@ -61,7 +60,7 @@ export const PlayButtonContainer = styled.View`
 `;
 
 export const PlayButtonArea = styled.TouchableOpacity`
-  background-color: #ffffff33;
+  background-color: ${({ theme }) => theme.components.homePlayButtonAreaColor};
   border-radius: ${playButtonSize / 2}px;
 `;
 
@@ -80,7 +79,7 @@ export const TitleOfTheGame = styled.View`
 export const TitleOfTheGameText = styled.Text<{
   bold?: boolean;
 }>`
-  font-family: ${props => (props.bold ? theme.fonts.normal : theme.fonts.bold)};
+  font-family: ${props => (props.bold ? props.theme.fonts.normal : props.theme.fonts.bold)};
   font-size: ${appPrimaryTitleSize}px;
   color: white;
   text-transform: uppercase;
