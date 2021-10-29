@@ -6,6 +6,7 @@ import { useFonts } from 'expo-font';
 import Preload from './src/screens/Preload';
 import AppContext from './src/components/AppContext';
 import maintheme from './src/themes/maintheme';
+import { themes } from './src/themes';
 
 
 
@@ -17,11 +18,24 @@ export default function App() {
     LoveloLineBold: require('./src/assets/fonts/lovelo/Lovelo_Line_Bold.otf'),
   });
 
-  const [themeName, setThemeName] = useState('main');
-  const theme = maintheme;
+  const [theme, setTheme] = useState(maintheme);
+  const [colorBlidness, setColorBlidness] = useState(false);
+  
+  const setThemeWrapper = (newThemeName: string) => {
+    const newTheme = themes[newThemeName];
+    if (newTheme){
+        setTheme(newTheme);
+    }
+  }
 
   const userPrefs = {
     theme,
+    setThemeWrapper,
+    colorBlidness,
+    setColorBlidness,
+    sound: true,
+    vibrate: true,
+    talk: false,
   };
 
   if (!fontsLoaded) return <Preload />;

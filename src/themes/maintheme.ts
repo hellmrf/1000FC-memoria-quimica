@@ -1,8 +1,7 @@
-import { color } from "react-native-reanimated";
 import colors from "./colors";
 
 export default {
-  theme: 'MainTheme',
+  name: 'MainTheme',
   fonts: {
     normal: 'LoveloBlack',
     bold: 'LoveloLineBold',
@@ -21,6 +20,7 @@ export default {
   components: {
     homeBackgroundColor: colors.lightPurple,
     homeGradientBackgroundColor: [colors.turquoise, colors.turquoise60, colors.turquoise00],
+    homeTitleColor: colors.white,
     homeAtomBorderColor: colors.white77,
     homePlayButtonAreaColor: colors.white33,
     homeConfigButtonAreaColor: colors.white65,

@@ -85,7 +85,7 @@ export const TitleOfTheGame = styled.View`
 export const TitleOfTheGameText = styled.Text<{ bold?: boolean }>`
   font-family: ${props => (props.bold ? props.theme.fonts.normal : props.theme.fonts.bold)};
   font-size: ${appPrimaryTitleSize}px;
-  color: white;
+  color: ${({ theme }) => theme.components.homeTitleColor};
   text-transform: uppercase;
   text-align: center;
   text-shadow: 1px 2px 18px rgba(0, 0, 0, 0.2);

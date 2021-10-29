@@ -13,7 +13,6 @@ import {
 import AnimatedGrid from './AnimatedGrid';
 import AppContext from '../../components/AppContext';
 
-
 // Add a method for shuffle arrays in the 'base class'.
 Array.prototype.shuffle = function() {
     var i = this.length, j, temp;
@@ -27,11 +26,9 @@ Array.prototype.shuffle = function() {
     return this;
   }
 
-
 export default ({route, navigation}) => {
 
     const [avatarIds, setAvatarIds] = useState(route.params.players);
-    const rouletteDegree = useRef(new Animated.Value(0)).current;
     const [finished, setFinished] = useState(false);
 
     const userPrefs = useContext(AppContext);

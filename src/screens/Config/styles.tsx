@@ -25,12 +25,16 @@ export const Container = styled.View`
 class SwitchBase extends React.Component{
 
   state = {
-    isEnabled: false,
+    isEnabled: this.props.isEnabled ? this.props.isEnabled : false,
   };
 
   toggleSwitch = () => {
     this.setState({isEnabled: !this.state.isEnabled});
   };
+
+  constructor(props){
+    super(props);
+  }
 
   render(){
     return (
@@ -50,7 +54,8 @@ class SwitchBase extends React.Component{
           flex={0.2}
           scaleX={1.1}
           scaleY={1.1}
-          onValueChange={this.toggleSwitch}
+          onValueChange={(value) => this.props.action ? this.props.action(value): () => {}}
+          onChange={this.toggleSwitch}
           value={this.state.isEnabled}
         />
       </View>

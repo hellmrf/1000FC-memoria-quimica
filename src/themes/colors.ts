@@ -18,6 +18,7 @@ export default {
     white50: '#ffffff50',
     white65: '#ffffff65',
     white77: '#ffffff77',
+    black: '#000000',
     lawnGreen: '#76eb00',
     steelPink: '#d223eb',
     saffron: '#ebba2f',

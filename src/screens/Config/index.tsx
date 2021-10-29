@@ -3,7 +3,6 @@ import React, { useContext, useState } from "react";
 
 import ConfigIcon from '../../assets/config_button.svg';
 
-
 import {
     Container,
     SwitchItem
@@ -13,13 +12,25 @@ import AppContext from '../../components/AppContext';
 
 export default () => {
   
-  const userPrefs = useContext(AppContext);
+  let userPrefs = useContext(AppContext);
   const theme = userPrefs.theme;
+  const setThemeWrapper = userPrefs.setThemeWrapper;
+
+  const toggleColorBlindnessTheme = (isEnabled) => {
+    if (isEnabled){
+      setThemeWrapper('colorblindnesstheme');
+      userPrefs.setColorBlidness(true);
+    }else {
+      setThemeWrapper('maintheme');
+      userPrefs.setColorBlidness(false);
+    }
+  };
     
   return (
     <Container theme={theme}>
-      <SwitchItem theme={theme}
+      <SwitchItem theme={theme} isEnabled={userPrefs.colorBlidness}
         label='Modo Daltônico'
+        action={toggleColorBlindnessTheme}
       />
       <SwitchItem theme={theme}
         label='Som'
