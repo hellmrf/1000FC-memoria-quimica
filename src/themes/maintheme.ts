@@ -7,6 +7,7 @@ export default {
     normal: 'LoveloBlack',
     bold: 'LoveloLineBold',
     title: 'LoveloLineBold',
+    description: 'AileronSemiBold'
   },
   colors: {
     mainBackground: '#a4d418ff',
@@ -23,11 +24,20 @@ export default {
     homeAtomBorderColor: colors.white77,
     homePlayButtonAreaColor: colors.white33,
     homeConfigButtonAreaColor: colors.white65,
+    subjectBackgroundColor: colors.lightPurple,
+    subjectPlayButtonAreaColor: colors.white77,
+    choosePlayersBackgroundColor: colors.lightPurple,
+    choosePlayersTitleBackgroundColor: colors.middleYellow,
+    shufflePlayersBackgroundColor: colors.lightPurple,
+    shufflePlayersTitleBackgroundColor: colors.middleYellow,
+    sufflePlayersColors: [colors.red, colors.thulian, colors.greenTea, colors.blue, colors.lightSlateGray, colors.parisGreen],
     gameDefaultBackgroundColor: colors.lightGreen,
     gameFooterBackgroundColor: colors.purple,
     gameFooterBorderColor: colors.lightPurple,
     gameAvatarIndicatorColor: colors.red,
     gameAvatarAreaColor: colors.white77,
+    configBackgroundColor: colors.lightPurple,
+    configTextItemColor: colors.white,
     primaryColor: colors.purple,
     secondaryColor: colors.lightGreen,
     avatars: [colors.lawnGreen, colors.steelPink, colors.saffron, colors.blueRibbon, colors.hanPurple]

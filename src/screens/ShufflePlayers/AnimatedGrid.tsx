@@ -18,14 +18,6 @@ const avatars = {
     6: Character6Icon
 };
 
-const colors = {
-    1: 'red',
-    2: 'blue',
-    3: 'green',
-    4: 'pink',
-    5: 'yellow',
-    6: 'gray'
-}
  
 const timeShuffle = 3; // seconds.
 
@@ -91,7 +83,7 @@ export default (props) => {
                 <Animated.View style={{width: '100%', height: '50%', opacity: opacityFade}}>
                     <AvatarSVG width='100%' height='100%' />
                 </Animated.View>
-                <Text style={{fontWeight: 'bold', backgroundColor: colors[item], borderRadius: 100, height: 30, width: 30, textAlign: 'center', textAlignVertical: 'center'}}>
+                <Text style={{fontWeight: 'bold', backgroundColor: props.theme.components.sufflePlayersColors[item - 1], borderRadius: 100, height: 30, width: 30, textAlign: 'center', textAlignVertical: 'center'}}>
                     #{props.avatarIds.indexOf(item) + 1}
                 </Text>
             </Animated.View>

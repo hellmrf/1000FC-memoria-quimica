@@ -16,7 +16,7 @@ export const containerArrowButtonSize = 0.25;
 // It's the background too.
 export const ContainerMain = styled.View`
   flex: 1;
-  background-color: #8c52ffff;
+  background-color: ${({ theme }) => theme.components.subjectBackgroundColor};
 `;
 
 export const ContainerTop = styled.View`
@@ -62,7 +62,7 @@ export const PlaySubjectButtonArea = styled.Pressable`
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-color: #ffffff77;
+  background-color: ${({ theme }) => theme.components.subjectPlayButtonAreaColor};
   width: ${circleDiameter}px;
   height: ${circleDiameter}px;
   border-radius: ${circleDiameter/2}px;
@@ -72,7 +72,7 @@ export const PlaySubjectButtonArea = styled.Pressable`
 `;
 
 const TextStyled = styled.Text<{horizontalPadding?: string, verticalPadding?: string}>`
-  font-family: LoveloBlack;
+  font-family: ${({ theme }) => theme.fonts.normal};
   text-align: center;
   text-transform: uppercase;
   color: white;
@@ -93,7 +93,7 @@ export const SubTitle = styled(TextStyled)`
 export const NormalText = styled(TextStyled)`
   font-size: ${normalTextSize}px;
   text-transform: none;
-  font-family: AileronSemiBold
+  font-family: ${({ theme }) => theme.fonts.description};
   padding-horizontal: 5%;
 `;
 

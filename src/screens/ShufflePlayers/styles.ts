@@ -20,7 +20,7 @@ export const Container = styled.View`
     flex: 1;
     align-items: stretch;
     justify-content: center;
-    background-color: #5e17ebff;
+    background-color: ${({ theme }) => theme.components.shufflePlayersBackgroundColor};
     padding-horizontal: 4%;
     
 `;
@@ -30,16 +30,6 @@ export const RowLayout = styled.View`
     flex-direction: row;
     justify-content: ${(props) => (props.justifyContent || 'space-between')};
     align-items: ${(props) => (props.alignItems || 'center')};
-`;
-
-export const BgCircle = styled.View<{perc: number, bgColor ?: string}>`
-    border-radius: ${(props) => (props.perc ? props.perc:1) * BgCircWidthDiameter / 2}px;
-    width: ${(props) => (props.perc ? props.perc:1) * BgCircWidthDiameter}px;
-    height: ${(props) => (props.perc ? props.perc:1) * BgCircWidthDiameter}px;
-    background-color: ${props => props.bgColor ? props.bgColor:'#e3bc73ff'};
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 `;
 
 
@@ -57,7 +47,7 @@ export const TitleContainer = styled.View`
     align-items: center;
     justify-content: center;
     border-radius: 60px;
-    background-color: #e3bc73ff;
+    background-color: ${({ theme }) => theme.components.shufflePlayersTitleBackgroundColor};
     padding-vertical: 3%;
     margin-horizontal: 10%;
 `;
@@ -76,7 +66,7 @@ export const CharacterButton = styled.TouchableOpacity<{idx: number, characters:
 `;
 
 export const Title = styled.Text`
-    font-family: LoveloBlack;
+    font-family: ${({ theme }) => theme.fonts.normal};
     text-align: center;
     color: white;
     padding-horizontal: ${props => props.horizontalPadding || '0%'};

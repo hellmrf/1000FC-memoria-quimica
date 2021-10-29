@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 //import { Button, Dimensions, View, Text, Pressable } from 'react-native';
 
 import Character1Icon from '../../assets/avatars/character_1.svg';
@@ -25,6 +25,7 @@ import {
 } from './styles';
 
 import CharacterButton from './CharacterButton';
+import AppContext from '../../components/AppContext';
 
 
 const ILLUS_WIDTH = '30%';
@@ -35,6 +36,9 @@ const minPlayers = 2; // Min players in the game.
 
 export default () => {
   const navigation = useNavigation();
+
+  const userPrefs = useContext(AppContext);
+  const theme = userPrefs.theme;
 
   const [next, setNext] = useState(false);
   const [players, setPlayers] = useState(Array());
@@ -59,14 +63,14 @@ export default () => {
   };
 
   return (
-    <Container>
+    <Container theme={theme}>
       <RowLayout
         flex={0.2} justifyContent="center" alignItems="flex-start" marginTop="8%">
-        <TitleContainer width="50%">
+        <TitleContainer width="50%" theme={theme}>
           <ContainerSVG height="40%" width="20%">
             <IllusTitle01 height="100%" width="100%" />
           </ContainerSVG>
-          <Title>escolha um {'\n'}personagem:</Title>
+          <Title theme={theme}>escolha um {'\n'}personagem:</Title>
           <ContainerSVG height="40%" width="20%">
             <IllusTitle02 height="100%" width="100%" />
           </ContainerSVG>

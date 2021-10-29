@@ -14,7 +14,7 @@ export const Container = styled.View`
     flex: 1;
     align-items: stretch;
     justify-content: center;
-    background-color: #5e17ebff;
+    background-color: ${({ theme }) => theme.components.choosePlayersBackgroundColor};
     padding-horizontal: 4%;
     z-index: -1;
     
@@ -43,7 +43,7 @@ export const TitleContainer = styled.View`
     align-items: center;
     justify-content: center;
     border-radius: 60px;
-    background-color: #e3bc73ff;
+    background-color: ${({ theme }) => theme.components.choosePlayersTitleBackgroundColor};
     padding-vertical: 3%;
     margin-horizontal: 10%;
 `;
@@ -64,7 +64,7 @@ export const CharacterButton = styled.TouchableOpacity<{idx: number, characters:
 
 
 export const Title = styled.Text`
-    font-family: LoveloBlack;
+    font-family: ${({ theme }) => theme.fonts.normal};
     text-align: center;
     color: white;
     padding-horizontal: ${props => props.horizontalPadding || '0%'};

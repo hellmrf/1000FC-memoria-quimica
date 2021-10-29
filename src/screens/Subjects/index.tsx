@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { Animated, Dimensions } from 'react-native';
 
@@ -23,6 +23,7 @@ import {
 
 import ArrowButton from './ArrowButton';
 import PlayButton from './PlayButton';
+import AppContext from '../../components/AppContext';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
@@ -31,8 +32,10 @@ export default () => {
   const navigation = useNavigation();
   const startButtonAction = () => navigation.navigate('ChoosePlayers');
 
-  const centerScreen =
-    (SCREEN_WIDTH * containerPlaySubjectButtonSize) / 2 - circleDiameter / 2; // Get the button's center on the screen.
+  const userPrefs = useContext(AppContext);
+  const theme = userPrefs.theme;
+
+  const centerScreen = (SCREEN_WIDTH * containerPlaySubjectButtonSize) / 2 - circleDiameter / 2; // Get the button's center on the screen.
   const subjectMoveAnim = useRef(new Animated.Value(centerScreen)).current;
   const [subjectTitle, setSubjectTtile] = useState('Tabela Periódica');
   const [subjectDescription, setSubjectDescription] = useState(
@@ -66,19 +69,20 @@ export default () => {
   };
 
   return (
-    <ContainerMain>
+    <ContainerMain theme={theme}>
       <ContainerTop>
-        <PrimaryTitle> Qual tema? </PrimaryTitle>
+        <PrimaryTitle theme={theme}> Qual tema? </PrimaryTitle>
       </ContainerTop>
       <ContainerMiddle>
         <ContainerArrowButtonLeft>
           <ArrowButton action={moveLeft} left />
         </ContainerArrowButtonLeft>
         <ContainerPlaySubjectButton>
-          <PlayButton screenPosX={subjectMoveAnim} action={actions}>
+          <PlayButton screenPosX={subjectMoveAnim} action={actions} theme={theme}>
             <PlayPeriodicTableSVG width="100%" height="100%" />
           </PlayButton>
           <PlayButton
+            theme={theme}
             action={() => {}}
             screenPosX={subjectMoveAnim.interpolate({
               inputRange: [-SCREEN_WIDTH, centerScreen],
@@ -92,8 +96,8 @@ export default () => {
         </ContainerArrowButtonRight>
       </ContainerMiddle>
       <ContainerBottom>
-        <SubTitle> {subjectTitle} </SubTitle>
-        <NormalText> {subjectDescription} </NormalText>
+        <SubTitle theme={theme}> {subjectTitle} </SubTitle>
+        <NormalText theme={theme}> {subjectDescription} </NormalText>
       </ContainerBottom>
     </ContainerMain>
   );

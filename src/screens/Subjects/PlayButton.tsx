@@ -28,7 +28,8 @@ export default (props: object) => {
     <PlaySubjectButtonAreaAnimated
       onPress={actions}
       opacity={opacityPress}
-      left={props.screenPosX}>
+      left={props.screenPosX}
+      theme={props.theme}>
       {props.children}
     </PlaySubjectButtonAreaAnimated>
   );
