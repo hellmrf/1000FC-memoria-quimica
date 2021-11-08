@@ -3,12 +3,9 @@ import theme from '../../themes';
 import { STATUSBAR_HEIGHT } from '../../utils/deviceConstants';
 import { getScreenSizePX } from '../../utils/responsive';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = getScreenSizePX();
-
-export const Container = styled.SafeAreaView<{ player?: number }>`
+export const StyledContainer = styled.SafeAreaView<{ color?: string }>`
   flex: 1;
-  background-color: ${props =>
-    props.player !== undefined ? theme.colors.avatars[props.player] : theme.colors.mainBackground};
+  /* background-color: ${props => props.color || theme.colors.mainBackground}; */
   justify-content: center;
   align-items: center;
   padding-top: ${STATUSBAR_HEIGHT}px;
