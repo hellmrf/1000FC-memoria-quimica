@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="189.90988mm"
+   height="103.42103mm"
+   viewBox="0 0 189.90988 103.42103"
+   version="1.1"
+   id="svg1073"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="arrow_subject_right.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1067">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath80">
+      <path
+         d="M 0,0 H 3375 V 6031.25 H 0 Z"
+         id="path78"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath86">
+      <path
+         d="M 0,0 H 3375 V 6000 H 0 Z"
+         id="path84"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath92">
+      <path
+         d="M 2593.5127,1340.046 346.6416,1344.3005 344.33398,125.55273 2591.2051,121.29822 Z"
+         id="path90"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath98">
+      <path
+         d="M 2593.5127,1340.046 346.6416,1344.3005 344.33398,125.55273 2591.2051,121.29822 Z"
+         id="path96"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath104">
+      <path
+         d="M 2593.5127,1340.046 347.22729,1344.2994 344.91772,124.52527 2591.2031,120.27185 Z"
+         id="path102"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="393.57143"
+     inkscape:cy="190.71429"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g82"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0" />
+  <metadata
+     id="metadata1070">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-9.3664934,-74.444248)">
+    <g
+       id="g74"
+       transform="matrix(0.08466666,0,0,0.08466666,-20.121008,64.174333)">
+      <g
+         id="g76"
+         clip-path="url(#clipPath80)">
+        <g
+           id="g82"
+           clip-path="url(#clipPath86)">
+          <g
+             id="g88"
+             clip-path="url(#clipPath92)"
+             transform="matrix(-1,0,0,1,2939.5855,0)">
+            <g
+               id="g94"
+               clip-path="url(#clipPath98)">
+              <g
+                 id="g100"
+                 clip-path="url(#clipPath104)">
+                <g
+                   id="g106"
+                   transform="matrix(-12.170877,0.02304566,-0.02309653,-12.197741,2618.0884,1342.4391)">
+                  <path
+                     d="m 2.2,0.2 v 26.000001 l 31.000001,24 L 2.2000008,74.199997 V 100.2 L 66.800003,50.199997 Z M 3.5,74.800003 35.299999,50.200005 3.5,25.5 V 2.8 L 64.699997,50.099998 3.5,97.5 Z M 62,0.2 v 26.000001 l 31,24 -31,23.999996 V 100.2 L 126.6,50.199997 Z M 63.299999,74.800003 95.099998,50.200005 63.299999,25.5 V 2.8 L 124.5,50.099998 63.299999,97.5 Z M 121.8,0.2 v 26.000001 l 31,24 -31,23.999996 V 100.2 l 64.59999,-50.000003 z m 1.3,74.600003 31.79999,-24.599998 -31.8,-24.600001 V 2.8 l 61.2,47.299998 -61.2,47.299996 V 74.800003 Z"
+                     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     id="path108"
+                     inkscape:connector-curvature="0" />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

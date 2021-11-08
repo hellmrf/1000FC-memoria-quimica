@@ -1,9 +1,13 @@
 /**
- * This file is, for all effects, the definition of the current theme.
- */
+ * This file contains all available themes.
+ **/
 
-// TODO: Do some magick here to get the current theme and import it
-import theme from "./maintheme"
+import maintheme from "./maintheme";
+import colorblindnesstheme from "./colorblindnesstheme";
 
-// Reexport the theme.
-export default theme
+export const themes = {
+    maintheme,
+    colorblindnesstheme
+};
+
+export default maintheme;

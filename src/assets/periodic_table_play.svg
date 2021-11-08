@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="136.1604mm"
+   height="136.26039mm"
+   viewBox="0 0 136.1604 136.26039"
+   version="1.1"
+   id="svg1131"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="play_subject_button.svg">
+  <defs
+     id="defs1125">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath148">
+      <path
+         d="M 865.81824,1947.8281 H 2475.1934 v 1609.375 H 865.81824 Z"
+         id="path146"
+         inkscape:connector-curvature="0"
+         style="clip-rule:evenodd" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath160">
+      <path
+         d="m 1014.5143,2096.5242 h 1312.5 v 1312.5 h -1312.5 z"
+         id="path158"
+         inkscape:connector-curvature="0"
+         style="clip-rule:evenodd" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-248.59226"
+     inkscape:cy="197.49998"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-left="-0.1"
+     fit-margin-top="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="1366"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1128">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-31.755513,-64.828139)">
+    <g
+       transform="matrix(0.08466666,0,0,0.08466666,-41.650426,-100.08796)"
+       id="g142">
+      <g
+         id="g144"
+         clip-path="url(#clipPath148)">
+        <g
+           id="g150"
+           transform="matrix(67.057289,0,0,67.057289,61.130737,1143.1406)">
+          <path
+             d="M 12,12 H 36 V 36 H 12 Z"
+             style="fill:#99b83c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path152"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.08466666,0,0,0.08466666,-41.650426,-100.08796)"
+       id="g154">
+      <g
+         id="g156"
+         clip-path="url(#clipPath160)">
+        <g
+           id="g162"
+           transform="matrix(54.687508,0,0,54.687508,358.26428,1440.2742)">
+          <path
+             d="M 12,12 H 36 V 36 H 12 Z"
+             style="fill:#b6dd43;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path164"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g204"
+       transform="matrix(0.40268943,0,0,0.40268943,65.700071,85.175067)">
+      <text
+         style="font-variant:normal;font-weight:800;font-size:152.57870483px;font-family:'Open Sans';-inkscape-font-specification:OpenSans-ExtraBold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.27148926"
+         id="text208"
+         x="7.5598187"
+         y="130">
+        <tspan
+           x="7.5598187 60.67926"
+           y="130"
+           sodipodi:role="line"
+           id="tspan206"
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-family:Aileron;-inkscape-font-specification:'Aileron Heavy';stroke-width:1.27148926">In</tspan>
+      </text>
+    </g>
+    <g
+       transform="matrix(0.40268943,0,0,0.40268943,64.939037,121.92477)"
+       id="g1045">
+      <text
+         y="130"
+         x="-9.6644392"
+         id="text1043"
+         style="font-variant:normal;font-weight:800;font-size:152.57870483px;font-family:'Open Sans';-inkscape-font-specification:OpenSans-ExtraBold;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.27148926">
+        <tspan
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:63.07590485px;font-family:Aileron;-inkscape-font-specification:'Aileron Heavy';stroke-width:1.27148926"
+           id="tspan1041"
+           sodipodi:role="line"
+           x="-9.6644392"
+           y="130">iniciar</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
