@@ -33,9 +33,29 @@ export interface ScreenSize {
   height: number;
 }
 
+// TODO: rename to getScreenSizeInPixels
 export function getScreenSizePX(): ScreenSize {
   return {
     width: PixelRatio.getPixelSizeForLayoutSize(width),
     height: PixelRatio.getPixelSizeForLayoutSize(height),
   };
+}
+
+// TODO: falta levar em conta o tamanho do StatusBar.
+export function percentageToHeight(percentage: number) {
+  if (percentage > 1 || percentage < 0) {
+    throw RangeError(
+      `Percentage must be within [0, 1] interval. Got ${percentage}.`
+    );
+  }
+  return percentage * height;
+}
+
+export function percentageToWidth(percentage: number) {
+  if (percentage > 1 || percentage < 0) {
+    throw RangeError(
+      `Percentage must be within [0, 1] interval. Got ${percentage}.`
+    );
+  }
+  return percentage * width;
 }
