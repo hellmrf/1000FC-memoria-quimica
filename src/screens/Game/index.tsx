@@ -10,6 +10,8 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { StackParamList } from '../../stacks/MainStack';
 // import Animated from 'react-native-reanimated';
 
+import { avatars } from '../../components/CharachterIcons';
+
 interface ContainerProps {
   player: number;
   colors: string[];
@@ -41,14 +43,16 @@ export default (props: Props) => {
   const [points, setPoints] = React.useState(1000);
   const nextPlayer = () => setActivePlayer((activePlayer + 1) % numberOfPlayers);
 
-  const avatars = range(numberOfPlayers).map(x => (
-    <AvatarSelector key={x} active={activePlayer === x} />
-  ));
+  const avatarsElems = players.map(x => {
+    // FIXME: The problem here is that we're indexing from the avatars IDs, but actually we need the index in the sense of an offset.
+    console.info(x);
+    return <AvatarSelector key={x} active={activePlayer === x} Avatar={avatars[x]} />;
+  });
 
   return (
     <Container player={activePlayer} colors={theme.colors.avatars}>
       <GameHeader>
-        <Avatars>{avatars}</Avatars>
+        <Avatars>{avatarsElems}</Avatars>
       </GameHeader>
       <GameArea>
         <GameBoard>
