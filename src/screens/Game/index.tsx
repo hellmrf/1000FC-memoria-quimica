@@ -43,10 +43,8 @@ export default (props: Props) => {
   const [points, setPoints] = React.useState(1000);
   const nextPlayer = () => setActivePlayer((activePlayer + 1) % numberOfPlayers);
 
-  const avatarsElems = players.map(x => {
-    // FIXME: The problem here is that we're indexing from the avatars IDs, but actually we need the index in the sense of an offset.
-    console.info(x);
-    return <AvatarSelector key={x} active={activePlayer === x} Avatar={avatars[x]} />;
+  const avatarsElems = players.map((x, idx) => {
+    return <AvatarSelector key={idx} active={activePlayer === idx} Avatar={avatars[x]} />;
   });
 
   return (
