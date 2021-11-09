@@ -1,12 +1,17 @@
 import React, { useRef } from 'react';
 import { Animated, Easing, View } from 'react-native';
+import { Theme } from '../../themes';
 import { PlaySubjectButtonArea } from './styles';
 
-export default (props: object) => {
+interface PlayButtonProps {
+  action: () => void;
+  screenPosX: number;
+  theme: Theme;
+  children: React.ReactNode;
+}
+export default (props: PlayButtonProps) => {
   const opacityPress = useRef(new Animated.Value(1)).current;
-  const PlaySubjectButtonAreaAnimated = Animated.createAnimatedComponent(
-    PlaySubjectButtonArea
-  );
+  const PlaySubjectButtonAreaAnimated = Animated.createAnimatedComponent(PlaySubjectButtonArea);
 
   const clickAnimate = () => {
     Animated.timing(opacityPress, {

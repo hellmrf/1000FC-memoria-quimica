@@ -42,7 +42,7 @@ export default ({ route, navigation }: Props) => {
   return (
     <Container theme={theme}>
       <RowLayout flex={0.1} justifyContent="center" alignItems="flex-start" marginTop="8%">
-        <TitleContainer theme={theme} width="50%">
+        <TitleContainer theme={theme}>
           <Title theme={theme}> Sorteando ordem dos jogadores: </Title>
         </TitleContainer>
       </RowLayout>

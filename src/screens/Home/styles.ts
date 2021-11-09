@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 
 import { appPrimaryTitleSize } from '../../dimensions/text';
+import { Theme } from '../../themes';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
@@ -16,18 +17,14 @@ const relativeHeights = {
 } as const;
 
 const atomBorderPercSize = 0.7;
-const atomMaxSize = Math.min(
-  relativeHeights.atom * SCREEN_HEIGHT,
-  SCREEN_WIDTH
-);
+const atomMaxSize = Math.min(relativeHeights.atom * SCREEN_HEIGHT, SCREEN_WIDTH);
 const atomDiameter = atomBorderPercSize * atomMaxSize;
 
 const playButtonPercSize = 0.5;
 
-export const playButtonSize =
-  playButtonPercSize * relativeHeights.play * SCREEN_HEIGHT;
+export const playButtonSize = playButtonPercSize * relativeHeights.play * SCREEN_HEIGHT;
 
-export const Container = styled.View`
+export const Container = styled.View<{ theme: Theme }>`
   flex: 1;
   background-color: ${({ theme }) => theme.components.homeBackgroundColor};
 `;
@@ -43,7 +40,7 @@ export const AnimationContainer = styled.View`
   align-items: center;
 `;
 
-export const AtomAnimationBorder = styled.View`
+export const AtomAnimationBorder = styled.View<{ theme: Theme }>`
   width: ${atomDiameter}px;
   height: ${atomDiameter}px;
   background-color: ${({ theme }) => theme.components.homeAtomBorderColor};
@@ -64,7 +61,7 @@ export const PlayButtonContainer = styled.View`
   align-items: center;
 `;
 
-export const PlayButtonArea = styled.TouchableOpacity`
+export const PlayButtonArea = styled.TouchableOpacity<{ theme: Theme }>`
   background-color: ${({ theme }) => theme.components.homePlayButtonAreaColor};
   border-radius: ${playButtonSize / 2}px;
 `;
@@ -82,7 +79,7 @@ export const TitleOfTheGame = styled.View`
   margin-bottom: ${-1.25 * relativeHeights.title * SCREEN_HEIGHT}px;
 `;
 
-export const TitleOfTheGameText = styled.Text<{ bold?: boolean }>`
+export const TitleOfTheGameText = styled.Text<{ theme: Theme; bold?: boolean }>`
   font-family: ${props => (props.bold ? props.theme.fonts.normal : props.theme.fonts.bold)};
   font-size: ${appPrimaryTitleSize}px;
   color: ${({ theme }) => theme.components.homeTitleColor};
@@ -94,15 +91,15 @@ export const TitleOfTheGameText = styled.Text<{ bold?: boolean }>`
 export const ConfigButtonContainer = styled.View`
   flex: ${relativeHeights.config};
   align-items: flex-end;
-  margin-top:10%;
-  padding-right:4%;
+  margin-top: 10%;
+  padding-right: 4%;
 `;
 
-export const ConfigButtonArea = styled.TouchableOpacity<{diameter: number}>`
+export const ConfigButtonArea = styled.TouchableOpacity<{ theme: Theme; diameter: number }>`
   background-color: ${({ theme }) => theme.components.homeConfigButtonAreaColor};
-  border-radius: ${props => (props.diameter / 2)}px;
-  width: ${props => (props.diameter / 2)}px;
-  height: ${props => (props.diameter / 2)}px;
+  border-radius: ${props => props.diameter / 2}px;
+  width: ${props => props.diameter / 2}px;
+  height: ${props => props.diameter / 2}px;
   align-items: center;
   justify-content: center;
 `;

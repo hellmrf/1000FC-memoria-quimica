@@ -1,6 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useContext, useEffect, useState } from 'react';
-//import { Button, Dimensions, View, Text, Pressable } from 'react-native';
 
 import Character1Icon from '../../assets/avatars/character_1.svg';
 import Character2Icon from '../../assets/avatars/character_2.svg';
@@ -51,7 +50,7 @@ export default () => {
   return (
     <Container theme={theme}>
       <RowLayout flex={0.2} justifyContent="center" alignItems="flex-start" marginTop="8%">
-        <TitleContainer width="50%" theme={theme}>
+        <TitleContainer theme={theme}>
           <ContainerSVG height="40%" width="20%">
             <IllusTitle01 height="100%" width="100%" />
           </ContainerSVG>

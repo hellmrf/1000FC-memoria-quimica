@@ -2,16 +2,18 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Text, View } from 'react-native';
 import { Easing } from 'react-native-reanimated';
 
-import { avatars } from '../../components/CharachterIcons';
+import { avatars, AvatarID } from '../../components/CharachterIcons';
+
+import { Theme } from '../../themes';
 
 const timeShuffle = 3; // seconds.
 
 interface AnimatedGridProps {
-  avatarIds: number[];
+  avatarIds: Array<AvatarID>;
   finished: boolean;
-  setAvatarIds: (avatarIds: number[]) => void;
+  setAvatarIds: (avatarIds: AvatarID[]) => void;
   setFinished: (finished: boolean) => void;
-  theme: any; // TODO: add typing
+  theme: Theme;
 }
 export default (props: AnimatedGridProps) => {
   const numColumns = Math.max(4, props.avatarIds.length);
@@ -54,7 +56,7 @@ export default (props: AnimatedGridProps) => {
     return () => clearInterval(interval);
   });
 
-  const renderItem = (item: keyof typeof avatars) => {
+  const renderItem = (item: AvatarID) => {
     const AvatarSVG = avatars[item];
 
     const addCoord = (x: number): void => {
@@ -102,7 +104,7 @@ export default (props: AnimatedGridProps) => {
   };
 
   return (
-    <View flex={1} style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
       {props.avatarIds.map(renderItem)}
     </View>
   );

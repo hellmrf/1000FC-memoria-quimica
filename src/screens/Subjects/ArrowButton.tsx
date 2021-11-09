@@ -6,7 +6,10 @@ import ArrowSwitchRightSVG from '../../assets/arrow_subject_right.svg';
 import ArrowSwitchLeftPressedSVG from '../../assets/arrow_subject_left_pressed.svg';
 import ArrowSwitchRightPressedSVG from '../../assets/arrow_subject_right_pressed.svg';
 
-export default props => {
+interface ArrowButtonProps {
+  action: () => void;
+}
+export default (props: ArrowButtonProps) => {
   const opacityFade = useRef(new Animated.Value(1)).current;
 
   const animateClick = () => {

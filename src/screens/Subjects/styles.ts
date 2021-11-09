@@ -2,19 +2,23 @@ import styled from 'styled-components/native';
 import { Dimensions, View } from 'react-native';
 import { Svg } from 'react-native-svg';
 import { primaryTitleSize, subTitleSize, normalTextSize } from '../../dimensions/text';
+import { Theme } from '../../themes';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
-export const relativeHeights = {top: 0.15, middle: 0.7, bottom: 0.3}; // Must be sum up 1.
-export const circleMaxSize = Math.min(relativeHeights.middle * SCREEN_HEIGHT, SCREEN_WIDTH - (2 * SCREEN_WIDTH * 0.25));
+export const relativeHeights = { top: 0.15, middle: 0.7, bottom: 0.3 }; // Must be sum up 1.
+export const circleMaxSize = Math.min(
+  relativeHeights.middle * SCREEN_HEIGHT,
+  SCREEN_WIDTH - 2 * SCREEN_WIDTH * 0.25
+);
 export const circleDiameter = 1.25 * circleMaxSize;
 
 export const containerPlaySubjectButtonSize = 0.5;
 export const containerArrowButtonSize = 0.25;
 
 // It's the background too.
-export const ContainerMain = styled.View`
+export const ContainerMain = styled.View<{ theme: Theme }>`
   flex: 1;
   background-color: ${({ theme }) => theme.components.subjectBackgroundColor};
 `;
@@ -26,16 +30,16 @@ export const ContainerTop = styled.View`
 `;
 
 export const ContainerMiddle = styled.View`
-    flex: ${relativeHeights.middle};
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-evenly
+  flex: ${relativeHeights.middle};
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-evenly;
 `;
 
 export const ContainerBottom = styled.View`
-    flex: ${relativeHeights.bottom};
-    align-items: center;
-    justify-content: flex-start;
+  flex: ${relativeHeights.bottom};
+  align-items: center;
+  justify-content: flex-start;
 `;
 
 export const ContainerArrowButtonLeft = styled.View`
@@ -50,14 +54,14 @@ export const ContainerArrowButtonRight = styled(ContainerArrowButtonLeft)`
 `;
 
 export const ContainerPlaySubjectButton = styled.View`
-    flex: ${containerPlaySubjectButtonSize};
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
+  flex: ${containerPlaySubjectButtonSize};
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 `;
 
-export const PlaySubjectButtonArea = styled.Pressable`
+export const PlaySubjectButtonArea = styled.Pressable<{ theme: Theme }>`
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -65,13 +69,17 @@ export const PlaySubjectButtonArea = styled.Pressable`
   background-color: ${({ theme }) => theme.components.subjectPlayButtonAreaColor};
   width: ${circleDiameter}px;
   height: ${circleDiameter}px;
-  border-radius: ${circleDiameter/2}px;
+  border-radius: ${circleDiameter / 2}px;
   padding: 20%;
   position: absolute;
   z-index: -0.5;
 `;
 
-const TextStyled = styled.Text<{horizontalPadding?: string, verticalPadding?: string}>`
+const TextStyled = styled.Text<{
+  theme: Theme;
+  horizontalPadding?: string;
+  verticalPadding?: string;
+}>`
   font-family: ${({ theme }) => theme.fonts.normal};
   text-align: center;
   text-transform: uppercase;
@@ -81,13 +89,13 @@ const TextStyled = styled.Text<{horizontalPadding?: string, verticalPadding?: st
 `;
 
 export const PrimaryTitle = styled(TextStyled)`
-  font-size: ${primaryTitleSize}px
-  padding-horizontal: 10%;;
+  font-size: ${primaryTitleSize}px;
+  padding-horizontal: 10%;
 `;
 
 export const SubTitle = styled(TextStyled)`
-  font-size: ${subTitleSize}px
-  padding: 2% 10%;;
+  font-size: ${subTitleSize}px;
+  padding: 2% 10%;
 `;
 
 export const NormalText = styled(TextStyled)`
@@ -96,5 +104,3 @@ export const NormalText = styled(TextStyled)`
   font-family: ${({ theme }) => theme.fonts.description};
   padding-horizontal: 5%;
 `;
-
-

@@ -6,6 +6,7 @@ import { ButtonArea } from './styles';
 const MIN_OPACITY = 0.1;
 
 interface CharacterButtonProps {
+  id: number;
   action: Function;
   children?: React.ReactNode;
 }
