@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import Character1Icon from '../../assets/avatars/character_1.svg';
 import Character2Icon from '../../assets/avatars/character_2.svg';

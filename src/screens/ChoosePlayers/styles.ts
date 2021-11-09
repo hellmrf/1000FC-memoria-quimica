@@ -1,13 +1,6 @@
 import styled from 'styled-components/native';
 import { Svg } from 'react-native-svg';
 
-import {
-  normalTextSize,
-  subTitleSize,
-  subSubTitleSize,
-  primaryTitleSize,
-} from '../../dimensions/text';
-
 export const minOpactiy = 0.1;
 
 import { Container, RowLayout, CharacterButton, Title } from '../ShufflePlayers/styles';

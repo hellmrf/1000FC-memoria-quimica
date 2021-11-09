@@ -1,8 +1,8 @@
 import React from 'react';
-import { Switch, Text, View } from 'react-native';
+import { Switch, View } from 'react-native';
 import styled from 'styled-components/native';
 
-import { normalTextSize, subTitleSize } from '../../dimensions/text';
+import { subTitleSize } from '../../dimensions/text';
 import { Theme } from '../../themes';
 
 export const TextItem = styled.Text<{ theme: Theme }>`

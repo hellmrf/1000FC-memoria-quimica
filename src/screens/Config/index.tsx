@@ -1,7 +1,4 @@
-import { Switch, View, StyleSheet } from 'react-native';
-import React, { useContext, useState } from 'react';
-
-import ConfigIcon from '../../assets/config_button.svg';
+import React, { useContext } from 'react';
 
 import { Container, SwitchItem } from './styles';
 import AppContext from '../../components/AppContext';

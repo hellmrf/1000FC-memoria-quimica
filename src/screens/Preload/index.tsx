@@ -1,15 +1,8 @@
 import React from 'react';
-import { Image } from 'react-native';
 
 import Logotipo from '../../assets/logotipo_mono.svg';
 
-import {
-  AtomAnimation,
-  AtomAnimationBorder,
-  Background,
-  Container,
-  LogotipoArea,
-} from './styles';
+import { AtomAnimation, AtomAnimationBorder, Background, Container, LogotipoArea } from './styles';
 
 export default () => {
   return (

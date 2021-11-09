@@ -1,6 +1,4 @@
 import React, { useState, useRef, useContext } from 'react';
-// import { StackScreenProps } from '@react-navigation/stack';
-import { Animated } from 'react-native';
 
 import NextButtonSVG from '../../assets/next_button.svg';
 

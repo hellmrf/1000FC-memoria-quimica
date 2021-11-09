@@ -2,12 +2,7 @@ import styled from 'styled-components/native';
 import { Dimensions, View, ViewProps } from 'react-native';
 import { Svg } from 'react-native-svg';
 
-import {
-  normalTextSize,
-  subTitleSize,
-  subSubTitleSize,
-  primaryTitleSize,
-} from '../../dimensions/text';
+import { subSubTitleSize } from '../../dimensions/text';
 import { RefAttributes } from 'react';
 import { Theme } from '../../themes';
 

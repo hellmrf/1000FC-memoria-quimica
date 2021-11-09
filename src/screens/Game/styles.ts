@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 import theme from '../../themes';
 import { STATUSBAR_HEIGHT } from '../../utils/deviceConstants';
-import { getScreenSizePX } from '../../utils/responsive';
 
 export const StyledContainer = styled.SafeAreaView<{ color?: string }>`
   flex: 1;
