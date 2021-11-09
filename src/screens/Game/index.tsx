@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Animated, StyleSheet } from 'react-native';
+import React from 'react';
 import theme from '../../themes';
 import { range } from '../../utils/misc';
 
@@ -7,8 +6,8 @@ import HitsCounter from '../../components/HitsCounter';
 import GameCard from '../../components/GameCard';
 import { Avatars, StyledContainer, GameBoard, GameArea, GameFooter, GameHeader } from './styles';
 import AvatarSelector from './AvatarSelector';
-import { STATUSBAR_HEIGHT } from '../../utils/deviceConstants';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { StackScreenProps } from '@react-navigation/stack';
+import { StackParamList } from '../../stacks/MainStack';
 // import Animated from 'react-native-reanimated';
 
 interface ContainerProps {
@@ -26,9 +25,17 @@ const Container = (props: ContainerProps) => {
   return <StyledContainer color={getPlayerColor(props.player)}>{props.children}</StyledContainer>;
 };
 
-export default () => {
-  const numberOfPlayers = 4; // TODO: get from props
-  const numberOfCards = 4 * 4;
+interface GameProps {
+  cardsNumber?: number;
+}
+type Props = StackScreenProps<StackParamList, 'Game'> & GameProps;
+
+export default (props: Props) => {
+  const players = props.route.params.players;
+  const playersNumber = players.length;
+
+  const numberOfPlayers = playersNumber;
+  const numberOfCards = props.cardsNumber || 4 * 4;
 
   const [activePlayer, setActivePlayer] = React.useState(0);
   const [points, setPoints] = React.useState(1000);
