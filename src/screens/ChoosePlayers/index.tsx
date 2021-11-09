@@ -15,18 +15,10 @@ import IllusContent02 from '../../assets/illustration_02.svg';
 import IllusContent03 from '../../assets/illustration_01.svg';
 import NextButtonSVG from '../../assets/next_button.svg';
 
-import {
-  RowLayout,
-  ContainerSVG,
-  Container,
-  ButtonArea,
-  TitleContainer,
-  Title,
-} from './styles';
+import { RowLayout, ContainerSVG, Container, ButtonArea, TitleContainer, Title } from './styles';
 
 import CharacterButton from './CharacterButton';
 import AppContext from '../../components/AppContext';
-
 
 const ILLUS_WIDTH = '30%';
 const ILLUS_HEIGHT = '70%';
@@ -41,9 +33,8 @@ export default () => {
   const theme = userPrefs.theme;
 
   const [next, setNext] = useState(false);
-  const [players, setPlayers] = useState(Array());
-  const nextButtonAction = () =>
-    navigation.navigate('ShufflePlayers', { players });
+  const [players, setPlayers] = useState(Array<number>());
+  const nextButtonAction = () => navigation.navigate('ShufflePlayers', { players });
 
   const selectAvatar = (id: number) => {
     const cplayers = Array.from(players);
@@ -53,19 +44,13 @@ export default () => {
     } else {
       cplayers.push(id);
     }
-
-    if (cplayers.length >= minPlayers) {
-      setNext(true);
-    } else {
-      setNext(false);
-    }
+    setNext(cplayers.length >= minPlayers);
     setPlayers(cplayers);
   };
 
   return (
     <Container theme={theme}>
-      <RowLayout
-        flex={0.2} justifyContent="center" alignItems="flex-start" marginTop="8%">
+      <RowLayout flex={0.2} justifyContent="center" alignItems="flex-start" marginTop="8%">
         <TitleContainer width="50%" theme={theme}>
           <ContainerSVG height="40%" width="20%">
             <IllusTitle01 height="100%" width="100%" />
