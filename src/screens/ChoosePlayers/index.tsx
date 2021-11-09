@@ -23,7 +23,7 @@ import AppContext from '../../components/AppContext';
 const ILLUS_WIDTH = '30%';
 const ILLUS_HEIGHT = '70%';
 
-const numplayers = 6;
+const maxPlayers = 6;
 const minPlayers = 2; // Min players in the game.
 
 export default () => {
@@ -44,7 +44,7 @@ export default () => {
     } else {
       cplayers.push(id);
     }
-    setNext(cplayers.length >= minPlayers);
+    setNext(cplayers.length >= minPlayers && cplayers.length <= maxPlayers);
     setPlayers(cplayers);
   };
 
