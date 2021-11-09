@@ -8,8 +8,6 @@ import AppContext from './src/components/AppContext';
 import maintheme from './src/themes/maintheme';
 import { themes } from './src/themes';
 
-
-
 export default function App() {
   const [fontsLoaded] = useFonts({
     AileronHeavy: require('./src/assets/fonts/aileron/Aileron-Heavy.otf'),
@@ -19,20 +17,20 @@ export default function App() {
   });
 
   const [theme, setTheme] = useState(maintheme);
-  const [colorBlidness, setColorBlidness] = useState(false);
-  
+  const [colorBlindness, setColorBlindness] = useState(false);
+
   const setThemeWrapper = (newThemeName: string) => {
     const newTheme = themes[newThemeName];
-    if (newTheme){
-        setTheme(newTheme);
+    if (newTheme) {
+      setTheme(newTheme);
     }
-  }
+  };
 
   const userPrefs = {
     theme,
     setThemeWrapper,
-    colorBlidness,
-    setColorBlidness,
+    colorBlindness,
+    setColorBlindness,
     sound: true,
     vibrate: true,
     talk: false,

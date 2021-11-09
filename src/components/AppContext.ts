@@ -1,6 +1,24 @@
 import React from 'react';
+import maintheme, { Theme } from '../themes';
 
-// TODO: Add type definitions
-const AppContext = React.createContext();
+export interface AppContextInterface {
+  theme: Theme;
+  colorBlindness: boolean;
+  sound: boolean;
+  vibrate: boolean;
+  talk: boolean;
+  setColorBlindness: (colorBlindness: boolean) => void;
+  setThemeWrapper: (newTheme: string) => void;
+}
+
+const AppContext = React.createContext<AppContextInterface>({
+  theme: maintheme,
+  setThemeWrapper: () => {},
+  colorBlindness: false,
+  setColorBlindness: () => {},
+  sound: true,
+  vibrate: true,
+  talk: false,
+});
 
 export default AppContext;

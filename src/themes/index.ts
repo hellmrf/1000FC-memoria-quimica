@@ -2,12 +2,14 @@
  * This file contains all available themes.
  **/
 
-import maintheme from "./maintheme";
-import colorblindnesstheme from "./colorblindnesstheme";
+import maintheme from './maintheme';
+import colorblindnesstheme from './colorblindnesstheme';
 
 export const themes = {
-    maintheme,
-    colorblindnesstheme
+  maintheme,
+  colorblindnesstheme,
 };
+
+export type Theme = typeof maintheme;
 
 export default maintheme;
