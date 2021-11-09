@@ -5,7 +5,7 @@ import { getScreenSizePX } from '../../utils/responsive';
 
 export const StyledContainer = styled.SafeAreaView<{ color?: string }>`
   flex: 1;
-  /* background-color: ${props => props.color || theme.colors.mainBackground}; */
+  background-color: ${props => props.color || theme.colors.mainBackground};
   justify-content: center;
   align-items: center;
   padding-top: ${STATUSBAR_HEIGHT}px;

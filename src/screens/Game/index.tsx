@@ -18,60 +18,12 @@ interface ContainerProps {
 }
 
 const Container = (props: ContainerProps) => {
-  type BackgroundType = {
-    backgroundColor: Animated.AnimatedInterpolation | string;
-  };
-  const [animation, setAnimation] = useState(new Animated.Value(0));
-  const [animationStyle, setAnimationStyle] = useState<BackgroundType>({
-    backgroundColor: theme.colors.mainBackground,
-  });
-  const handleAnimation = () => {
-    Animated.timing(animation, {
-      toValue: 1,
-      duration: 1000,
-      useNativeDriver: false,
-    }).start();
+  const getPlayerColor = (player: number) => {
+    if (player < 0) return props.colors[0];
+    return props.colors[player % props.colors.length];
   };
 
-  const getColors = (player: number) => {
-    const lastPlayer = player - 1;
-    let lastColor = props.colors[lastPlayer];
-    if (lastPlayer < 0) {
-      lastColor = props.colors[props.colors.length - 1];
-    }
-    return [lastColor, props.colors[player]];
-  };
-
-  const containerInterpolation = () =>
-    animation.interpolate({
-      inputRange: [0, 1],
-      outputRange: getColors(props.player),
-    });
-
-  useEffect(() => {
-    setAnimationStyle({ backgroundColor: containerInterpolation() });
-    handleAnimation();
-  }, [animationStyle]);
-
-  const defaultStyle = StyleSheet.create({
-    main: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      paddingTop: STATUSBAR_HEIGHT,
-      flex: 1,
-      backgroundColor: 'pink',
-    },
-  });
-
-  // handleAnimation();
-
-  return (
-    <Animated.View style={[defaultStyle.main, animationStyle]}>{props.children}</Animated.View>
-    // <StyledContainer>
-    // <Animated.View style={[defaultStyle.main, animationStyle]}>{props.children}</Animated.View>
-    // </StyledContainer>
-  );
-  // return <StyledContainer color={getLastColor(props.player)}>{props.children}</StyledContainer>;
+  return <StyledContainer color={getPlayerColor(props.player)}>{props.children}</StyledContainer>;
 };
 
 export default () => {
