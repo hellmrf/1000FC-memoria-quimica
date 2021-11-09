@@ -19,7 +19,7 @@ import {
   PlayButtonContainer,
   playButtonSize,
   ConfigButtonContainer,
-  ConfigButtonArea
+  ConfigButtonArea,
 } from './styles';
 
 export default () => {
@@ -37,38 +37,31 @@ export default () => {
         start={{ x: 1, y: 1 }}
         end={{ x: 0.0, y: 0 }}
         colors={theme.components.homeGradientBackgroundColor}>
-          <ConfigButtonContainer>
-            <ConfigButtonArea
-              onPress={configButtonAction}
-              diameter={0.7 * playButtonSize}
-              theme={theme}>
-              <ConfigButton
-                height={0.3 * playButtonSize}
-                width={0.3 * playButtonSize}
-              />
-            </ConfigButtonArea>
-          </ConfigButtonContainer>
+        <ConfigButtonContainer>
+          <ConfigButtonArea
+            onPress={configButtonAction}
+            diameter={0.7 * playButtonSize}
+            theme={theme}>
+            <ConfigButton height={0.3 * playButtonSize} width={0.3 * playButtonSize} />
+          </ConfigButtonArea>
+        </ConfigButtonContainer>
         <TitleOfTheGameContainer>
           <TitleOfTheGame>
             <TitleOfTheGameText theme={theme}>Jogo</TitleOfTheGameText>
             <TitleOfTheGameText theme={theme}>da</TitleOfTheGameText>
-            <TitleOfTheGameText bold theme={theme}>Memória</TitleOfTheGameText>
+            <TitleOfTheGameText bold theme={theme}>
+              Memória
+            </TitleOfTheGameText>
           </TitleOfTheGame>
         </TitleOfTheGameContainer>
         <AnimationContainer>
           <AtomAnimationBorder theme={theme}>
-            <AtomAnimation
-              source={require('../../assets/atom_animation.gif')}
-            />
+            <AtomAnimation source={require('../../assets/atom_animation.gif')} />
           </AtomAnimationBorder>
         </AnimationContainer>
         <PlayButtonContainer>
           <PlayButtonArea onPress={playButtonAction} theme={theme}>
-            <PlayButton
-              height={playButtonSize}
-              width={playButtonSize}
-              fill="white"
-            />
+            <PlayButton height={playButtonSize} width={playButtonSize} fill="white" />
           </PlayButtonArea>
         </PlayButtonContainer>
       </Background>
