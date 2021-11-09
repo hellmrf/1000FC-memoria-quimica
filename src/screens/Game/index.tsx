@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet } from 'react-native';
 import theme from '../../themes';
 import { range } from '../../utils/misc';
 
@@ -8,6 +9,8 @@ import { Avatars, StyledContainer, GameBoard, GameArea, GameFooter, GameHeader }
 import AvatarSelector from './AvatarSelector';
 import { StackScreenProps } from '@react-navigation/stack';
 import { StackParamList } from '../../stacks/MainStack';
+import Animated from 'react-native-reanimated';
+import { STATUSBAR_HEIGHT } from '../../utils/deviceConstants';
 // import Animated from 'react-native-reanimated';
 
 interface ContainerProps {
@@ -17,12 +20,59 @@ interface ContainerProps {
 }
 
 const Container = (props: ContainerProps) => {
-  const getPlayerColor = (player: number) => {
-    if (player < 0) return props.colors[0];
-    return props.colors[player % props.colors.length];
+  type BackgroundType = {
+    backgroundColor: Animated.AnimatedInterpolation | string;
+  };
+  const [animation, setAnimation] = useState(new Animated.Value(0));
+  const [animationStyle, setAnimationStyle] = useState<BackgroundType>({
+    backgroundColor: theme.colors.mainBackground,
+  });
+  const handleAnimation = () => {
+    Animated.timing(animation, {
+      toValue: 1,
+      duration: 1000,
+      useNativeDriver: false,
+    }).start();
   };
 
-  return <StyledContainer color={getPlayerColor(props.player)}>{props.children}</StyledContainer>;
+  const getColors = (player: number) => {
+    const lastPlayer = player - 1;
+    let lastColor = props.colors[lastPlayer];
+    if (lastPlayer < 0) {
+      lastColor = props.colors[props.colors.length - 1];
+    }
+    return [lastColor, props.colors[player]];
+  };
+
+  const containerInterpolation = () =>
+    animation.interpolate({
+      inputRange: [0, 1],
+      outputRange: getColors(props.player),
+    });
+
+  useEffect(() => {
+    setAnimationStyle({ backgroundColor: containerInterpolation() });
+    handleAnimation();
+  }, [animationStyle]);
+
+  const defaultStyle = StyleSheet.create({
+    main: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingTop: STATUSBAR_HEIGHT,
+      flex: 1,
+      backgroundColor: 'pink',
+    },
+  });
+
+  // handleAnimation();
+
+  return (
+    <Animated.View style={[defaultStyle.main, animationStyle]}>{props.children}</Animated.View>
+    // <StyledContainer>
+    // <Animated.View style={[defaultStyle.main, animationStyle]}>{props.children}</Animated.View>
+    // </StyledContainer>
+  );
 };
 
 interface GameProps {
