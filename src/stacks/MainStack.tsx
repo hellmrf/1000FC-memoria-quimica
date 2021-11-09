@@ -1,6 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import { avatars } from '../components/CharachterIcons';
+
 import Home from '../screens/Home';
 import Game from '../screens/Game';
 import Subjects from '../screens/Subjects';
@@ -13,8 +15,8 @@ export type StackParamList = {
   Config: undefined;
   Subjects: undefined;
   ChoosePlayers: undefined;
-  ShufflePlayers: { players: number[] };
-  Game: { players: number[] };
+  ShufflePlayers: { players: Array<keyof typeof avatars> };
+  Game: { players: Array<keyof typeof avatars> };
 };
 
 const Stack = createStackNavigator<StackParamList>();
