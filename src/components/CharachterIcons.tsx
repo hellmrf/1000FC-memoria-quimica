@@ -14,4 +14,6 @@ const avatars = {
   6: Character6Icon,
 };
 
-export { avatars };
+type AvatarID = keyof typeof avatars;
+
+export { avatars, AvatarID };
