@@ -5,7 +5,12 @@ import { ButtonArea } from './styles';
 
 const MIN_OPACITY = 0.1;
 
-export default (props: object) => {
+interface CharacterButtonProps {
+  action: Function;
+  children?: React.ReactNode;
+}
+
+export default (props: CharacterButtonProps) => {
   const selectionOpacity = useRef(new Animated.Value(MIN_OPACITY)).current;
   const ButtonAreaAnimated = Animated.createAnimatedComponent(ButtonArea);
   const [active, setActive] = useState(false);
