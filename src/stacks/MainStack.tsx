@@ -8,16 +8,23 @@ import Config from '../screens/Config';
 import ChoosePlayers from '../screens/ChoosePlayers';
 import ShufflePlayers from '../screens/ShufflePlayers';
 
-const Stack = createStackNavigator();
+export type StackParamList = {
+  Home: undefined;
+  Config: undefined;
+  Subjects: undefined;
+  ChoosePlayers: undefined;
+  ShufflePlayers: { players: number[] };
+  Game: { players: number[] };
+};
+
+const Stack = createStackNavigator<StackParamList>();
 export default () => (
-  <Stack.Navigator
-    initialRouteName="Home"
-    screenOptions={{ headerShown: false }}>
+  <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
     <Stack.Screen name="Home" component={Home} />
     <Stack.Screen name="Config" component={Config} />
     <Stack.Screen name="Subjects" component={Subjects} />
     <Stack.Screen name="ChoosePlayers" component={ChoosePlayers} />
-    <Stack.Screen name='ShufflePlayers' component={ShufflePlayers} />
+    <Stack.Screen name="ShufflePlayers" component={ShufflePlayers} />
     <Stack.Screen name="Game" component={Game} />
   </Stack.Navigator>
 );
