@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import theme from '../../themes';
 import { range } from '../../utils/misc';
 
@@ -11,6 +11,10 @@ import { StackParamList } from '../../stacks/MainStack';
 // import Animated from 'react-native-reanimated';
 
 import { avatars } from '../../components/CharachterIcons';
+import GameModal from '../../components/GameModal';
+import AppContext from '../../components/AppContext';
+import { loadCards } from '../../utils/CardsProvider';
+
 
 interface ContainerProps {
   player: number;
@@ -33,8 +37,16 @@ interface GameProps {
 type Props = StackScreenProps<StackParamList, 'Game'> & GameProps;
 
 export default (props: Props) => {
+
+  const cards = loadCards();
+
+  console.log(cards[0]);
+
   const players = props.route.params.players;
   const playersNumber = players.length;
+
+  const userPrefs = useContext(AppContext);
+  const theme = userPrefs.theme;
 
   const numberOfPlayers = playersNumber;
   const numberOfCards = props.cardsNumber || 4 * 4;
@@ -47,6 +59,22 @@ export default (props: Props) => {
     return <AvatarSelector key={idx} active={activePlayer === idx} Avatar={avatars[x]} />;
   });
 
+  const [modalGameVisibility, setModalGameVisibility] = useState(false);
+  
+  let selectedCards = [];
+  const showModalIfReady = (cardId: number) =>{
+    selectedCards.push(cardId);
+    if (selectedCards.length == 2){
+        setModalGameVisibility(true);   
+    }
+
+    
+  }
+
+  const showCard = () => {
+
+  }
+
   return (
     <Container player={activePlayer} colors={theme.colors.avatars}>
       <GameHeader>
@@ -55,7 +83,7 @@ export default (props: Props) => {
       <GameArea>
         <GameBoard>
           {range(numberOfCards).map(x => (
-            <GameCard key={x} onPress={nextPlayer} />
+            <GameCard CardI={cards[x]} key={x} onPress={() => showModalIfReady(x)} />
           ))}
         </GameBoard>
       </GameArea>
@@ -63,6 +91,10 @@ export default (props: Props) => {
         <HitsCounter hit counter={0} />
         <HitsCounter hit={false} counter={0} />
       </GameFooter>
+      <GameModal theme={theme} isVisible={modalGameVisibility} onClose={() => nextPlayer()}
+        setVisibility={(visibility: boolean) => setModalGameVisibility(visibility)}
+        >
+      </GameModal>
     </Container>
   );
 };

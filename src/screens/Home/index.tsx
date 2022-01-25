@@ -6,6 +6,8 @@ import ConfigButton from '../../assets/config_button.svg';
 
 import AppContext from '../../components/AppContext';
 
+
+
 import {
   AtomAnimation,
   AtomAnimationBorder,
@@ -23,6 +25,8 @@ import {
 } from './styles';
 
 export default () => {
+
+
   const navigation = useNavigation();
 
   const playButtonAction = () => navigation.navigate('Subjects');
