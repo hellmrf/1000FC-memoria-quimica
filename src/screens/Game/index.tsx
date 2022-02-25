@@ -15,7 +15,6 @@ import GameModal from '../../components/GameModal';
 import AppContext from '../../components/AppContext';
 import { loadCards } from '../../utils/CardsProvider';
 
-
 interface ContainerProps {
   player: number;
   colors: string[];
@@ -37,7 +36,6 @@ interface GameProps {
 type Props = StackScreenProps<StackParamList, 'Game'> & GameProps;
 
 export default (props: Props) => {
-
   const cards = loadCards();
 
   console.log(cards[0]);
@@ -60,20 +58,16 @@ export default (props: Props) => {
   });
 
   const [modalGameVisibility, setModalGameVisibility] = useState(false);
-  
-  let selectedCards = [];
-  const showModalIfReady = (cardId: number) =>{
+
+  const selectedCards = [];
+  const showModalIfReady = (cardId: number) => {
     selectedCards.push(cardId);
-    if (selectedCards.length == 2){
-        setModalGameVisibility(true);   
+    if (selectedCards.length == 2) {
+      setModalGameVisibility(true);
     }
+  };
 
-    
-  }
-
-  const showCard = () => {
-
-  }
+  const showCard = () => {};
 
   return (
     <Container player={activePlayer} colors={theme.colors.avatars}>
@@ -83,7 +77,7 @@ export default (props: Props) => {
       <GameArea>
         <GameBoard>
           {range(numberOfCards).map(x => (
-            <GameCard CardI={cards[x]} key={x} onPress={() => showModalIfReady(x)} />
+            <GameCard CardImage={cards[x]} key={x} onPress={() => showModalIfReady(x)} />
           ))}
         </GameBoard>
       </GameArea>
@@ -91,10 +85,11 @@ export default (props: Props) => {
         <HitsCounter hit counter={0} />
         <HitsCounter hit={false} counter={0} />
       </GameFooter>
-      <GameModal theme={theme} isVisible={modalGameVisibility} onClose={() => nextPlayer()}
-        setVisibility={(visibility: boolean) => setModalGameVisibility(visibility)}
-        >
-      </GameModal>
+      <GameModal
+        theme={theme}
+        isVisible={modalGameVisibility}
+        onClose={() => nextPlayer()}
+        setVisibility={(visibility: boolean) => setModalGameVisibility(visibility)}></GameModal>
     </Container>
   );
 };
